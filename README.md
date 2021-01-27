@@ -2,7 +2,7 @@
 
 # HCL DNA Learning Path Repository
 Evan Watson
-##Purpose
+## Purpose
 This repository is meant to hold all work Evan Watson has completed while he participates in HCL's DNA courses.
 
 ## File Structure
