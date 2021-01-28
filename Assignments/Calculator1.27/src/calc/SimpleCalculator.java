@@ -5,11 +5,9 @@ import java.util.Scanner;
 //I inherited from Calculator just in case additional calculators are wanted
 // Ex. Graphing, Scientific, Accounting etc.
 public class SimpleCalculator extends Calculator{
-
-	public static void main(String[] args) {
-		
-		System.out.println("Welcome to Evan's Calculator! You can turn off the calculator by typing \"off\" at any point");
-		Calculator simpleCalc = new Calculator();
+	
+	public void build(Calculator simpleCalc) {
+		System.out.println("Welcome to Evan's Simple Calculator! You can turn off the calculator by typing \"off\" at any point");
 		String[] operations = simpleCalc.getOperations();
 		
 		//User Input
@@ -26,7 +24,6 @@ public class SimpleCalculator extends Calculator{
 			String check = scan.next();
 			simpleCalc.turnOff(check, scan);
 		}
-		
 		
 		while(true) {
 			

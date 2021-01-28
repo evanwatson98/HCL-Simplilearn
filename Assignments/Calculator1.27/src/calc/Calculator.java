@@ -30,10 +30,6 @@ public class Calculator {
 	public String[] getOperations() {
 		return operations;
 	}
-
-	public void setOperations(String[] operations) {
-		Calculator.operations = operations;
-	}
 	
 	public boolean checkOperation(String o) {
 		 for (String element : operations) { 
