@@ -1,26 +1,56 @@
 package calc;
-import java.io.*; 
+
+import java.util.Scanner;
 
 public class Calculator {
-	public static void main(String[] args) throws IOException {
-		InputStream in = null; 
-        try { 
-  
-        	in = new FileInputStream("ABC.txt"); 
-        }catch(Exception excpt) 
-        { 
-            // in case of I/O error 
-            excpt.printStackTrace(); 
-        } finally
-        { 
-            // releasing the resources back to the 
-            // GarbageCollector when closes 
-            if (in!=null) 
-            { 
-                // Use of close() : closing the file 
-                // and releasing resources 
-            	in.close(); 
-            } 
-        } 
+	
+	//made this an array so you can add any additional operators(Ex. graphing, accouunting, scientific calculators)
+	private static String[] operations = {"+", "-", "*", "/", "off"};
+
+	public double addition(double x, double y) {
+		double add = x + y;
+		return add; 
 	}
+	
+	public double subtraction(double x, double y) {
+		double sub = x - y;
+		return sub; 
+	}
+	
+	public double muliplication(double x, double y) {
+		double mul = x * y;
+		return mul; 
+	}
+	
+	public double division(double x, double y) {
+		double div = x / y;
+		return div; 
+	}
+
+	public String[] getOperations() {
+		return operations;
+	}
+
+	public void setOperations(String[] operations) {
+		Calculator.operations = operations;
+	}
+	
+	public boolean checkOperation(String o) {
+		 for (String element : operations) { 
+            if (element.equals(o)) { 
+            	return true;
+            } 
+		 }
+		 return false;
+	}
+	
+	
+	public void turnOff(String o, Scanner s) {
+		if(o.equals("off")) {
+			s.close();
+			System.exit(1);
+		}
+	}
+	
+	
 }
