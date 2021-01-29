@@ -6,20 +6,26 @@ import java.util.Scanner;
 // Ex. Graphing, Scientific, Accounting etc.
 public class SimpleCalculator extends Calculator{
 	
+		//build a simple calculator
 		public void buildSimple() {
+			//Introduction{
 			System.out.println("Welcome to Evan's Simple Calculator! You can turn off the calculator by typing \"off\" at any point");
+			
+			//Get all valid operations for this calculator
 			String[] operations = this.getOperations();
 			
 			//User Input
 			Scanner scan = new Scanner(System.in);
 			String oper = "";
+			
+			//Initial value the user puts in
 			double baseNum = 0.0;
 			boolean isNum = false;
 			
-			//Get starting number
 			System.out.print("Enter a number: ");
 			//Get the starting Number
 			while(!isNum) {
+				//check if number or string
 				try {
 					System.out.print("Enter a number: ");
 					baseNum = scan.nextDouble();
@@ -31,10 +37,10 @@ public class SimpleCalculator extends Calculator{
 					}
 				}
 			}
+			//reset isNum so I don't have to make another one for number 2
 			isNum = false;
 			
 			while(true) {
-				
 				System.out.print("Pick a valid operation " + Arrays.toString(operations));
 				oper = scan.next();
 				//Check to see if the user input is a valid operation

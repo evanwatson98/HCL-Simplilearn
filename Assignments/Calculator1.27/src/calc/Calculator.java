@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Calculator {
 	
-	//made this an array so you can add any additional operators(Ex. graphing, accouunting, scientific calculators)
+	//made this an array so you can add any additional operators easily and explicitly
 	private static String[] operations = {"+", "-", "*", "/", "off"};
 
 	public double addition(double x, double y) {
