@@ -22,7 +22,6 @@ public class SimpleCalculator extends Calculator{
 			double baseNum = 0.0;
 			boolean isNum = false;
 			
-			System.out.print("Enter a number: ");
 			//Get the starting Number
 			while(!isNum) {
 				//check if number or string
