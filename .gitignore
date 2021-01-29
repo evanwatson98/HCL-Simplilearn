@@ -41,7 +41,7 @@ gradle-app.setting
 bin/
 tmp/
 .metadata
-.classpath
+*.classpath
 .project
 *.tmp
 *.bak
