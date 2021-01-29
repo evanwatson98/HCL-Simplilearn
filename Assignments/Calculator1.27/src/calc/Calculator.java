@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Calculator {
 	
 	//made this an array so you can add any additional operators easily and explicitly
-	private static String[] operations = {"+", "-", "*", "/", "off"};
+//	private static String[] operations = {"+", "-", "*", "/", "off"};
 
 	public double addition(double x, double y) {
 		double add = x + y;
@@ -26,12 +26,8 @@ public class Calculator {
 		double div = x / y;
 		return div; 
 	}
-
-	public String[] getOperations() {
-		return operations;
-	}
 	
-	public boolean checkOperation(String o) {
+	public boolean checkOperation(String o, String[] operations) {
 		 for (String element : operations) { 
             if (element.equals(o)) { 
             	return true;
