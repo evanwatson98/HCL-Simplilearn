@@ -41,11 +41,13 @@ public class Calculator {
 	}
 	
 	
-	public void turnOff(String o, Scanner s) {
+	public boolean turnOff(String o, Scanner s) {
 		if(o.equals("off")) {
 			s.close();
 			System.exit(1);
+			return true;
 		}
+		return false;
 	}
 	
 	

@@ -3,6 +3,6 @@ package calc;
 public class Main {
 	public static void main(String[] args) {
 		SimpleCalculator simpleCalc = new SimpleCalculator();
-		simpleCalc.build(simpleCalc);
+		simpleCalc.buildSimple();
 	}
 }
