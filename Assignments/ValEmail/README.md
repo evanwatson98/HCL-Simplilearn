@@ -26,4 +26,9 @@ Core Java concepts: Methods, collections, and strings
 
 The versions of the code should be tracked on GitHub repositories
 The code should be able to search the required string from the array of strings
- 
+
+
+# Write Up
+To start the program the user must run the Main.java file.
+I have a few test cases for the user that is displayed when the program is ran.
+After it prints out the tests, the user can put in a custom search to test.

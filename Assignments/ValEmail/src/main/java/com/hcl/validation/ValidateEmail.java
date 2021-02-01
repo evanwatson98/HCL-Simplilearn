@@ -20,24 +20,33 @@ public class ValidateEmail {
 		ValidateEmail.emails = emails;
 	}
 	
+	Scanner scan = new Scanner(System.in);
+	
 	public void getInput() {
 		System.out.println("Search email named: ");
-		Scanner scan = new Scanner(System.in);
-		validateInput(scan.next());
+//		Scanner scan = new Scanner(System.in);
+		validateInput(scan.next(), true);
 		scan.close();
 	}
 	
-	public void validateInput(String email) {
+	public void validateInput(String email, Boolean isUser) {
 		String reg = ".+\\@.+(\\..+)+";
 //		Pattern pat = Pattern.compile(reg, Pattern.CASE_INSENSITIVE);
 		
 		Pattern pat = Pattern.compile(reg);
 		Matcher mat = pat.matcher(email);
 		System.out.println(email + mat.matches());
-		if(mat.matches()) {
-			searchEmails(email);
-		}else {
-			System.out.println("Not valid");
+		boolean val = false;
+		while(!val && isUser) {
+			if(mat.matches()) {
+				val = true;
+				searchEmails(email);
+			}else {
+				System.out.println("Not valid");
+				email = scan.next();
+			}
+			pat = Pattern.compile(reg);
+			mat = pat.matcher(email);
 		}
 	}
 

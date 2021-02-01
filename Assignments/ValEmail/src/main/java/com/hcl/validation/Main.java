@@ -10,7 +10,7 @@ public class Main {
 		String[] testEmails = {"evan@mailcom", "evanmail.com", "evanmailcom", "evanwatson98@gmail.com"};
 		ValidateEmail valEmail = new ValidateEmail();
 		for(String email:testEmails) {
-			valEmail.validateInput(email);
+			valEmail.validateInput(email,false);
 		}
 		
 		System.out.println("------------------------------------------");
