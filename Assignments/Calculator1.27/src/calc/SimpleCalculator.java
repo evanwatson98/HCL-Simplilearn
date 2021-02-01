@@ -6,7 +6,7 @@ import java.util.Scanner;
 // Ex. Graphing, Scientific, Accounting etc.
 public class SimpleCalculator extends Calculator{
 	
-	//Set an editable array of valid operations
+	//Set an uneditable array of valid operations
 	private static String[] operations = {"+", "-", "*", "/", "off"};
 	
 	//not necessarily needed for this project but could be helpful for bigger applications
