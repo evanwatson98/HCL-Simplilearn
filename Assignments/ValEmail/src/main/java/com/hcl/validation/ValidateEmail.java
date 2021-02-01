@@ -27,8 +27,8 @@ public class ValidateEmail {
 		scan.close();
 	}
 	
-	private void validateInput(String email) {
-		String reg = "^(.+)@(.+)$";
+	public void validateInput(String email) {
+		String reg = ".+\\@.+(\\..+)+";
 //		Pattern pat = Pattern.compile(reg, Pattern.CASE_INSENSITIVE);
 		
 		Pattern pat = Pattern.compile(reg);
@@ -37,7 +37,7 @@ public class ValidateEmail {
 		if(mat.matches()) {
 			searchEmails(email);
 		}else {
-			System.out.println("Not a valid email");
+			System.out.println("Not valid");
 		}
 	}
 
@@ -46,10 +46,10 @@ public class ValidateEmail {
 		for(String e:emails) {
 			if(e.equals(email)) {
 				System.out.println("Found email!");
-				break;
+				return;
 			}
-			System.out.println("No email found!");
 		}
+		System.out.println("No email found!");
 	}
 
 }
