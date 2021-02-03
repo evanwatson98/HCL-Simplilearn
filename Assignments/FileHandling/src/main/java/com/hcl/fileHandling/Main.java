@@ -8,10 +8,11 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		FileHandling test = new FileHandling();
-		test.writeCSV();
 		String[] tt = {"one", "two", "three"};
 		
-		test.convertToCSV(tt);
+//		test.convertToCSV(tt);
+//		test.writeCSV();
+		test.getCsvInput();
 	}
 
 }

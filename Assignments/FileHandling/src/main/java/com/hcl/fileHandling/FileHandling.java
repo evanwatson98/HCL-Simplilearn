@@ -9,74 +9,83 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.opencsv.CSVWriter;
 
-//import java.awt.List;
-//import java.io.BufferedReader;
-//import java.io.File;
-//import javax.sound.sampled.DataLine;
-//import java.util.stream.*;
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class FileHandling {
-//	/HCL/src/main/resources/comments.csv
+	
+	ArrayList<ArrayList<String>> rows = new ArrayList<ArrayList<String>>();
+	ArrayList<String> headers = new ArrayList<String>();
+	
+	public void getCsvInput() throws IOException {
+		Scanner scan = new Scanner(System.in);
+		int c = 1;
+		System.out.println("What Is the CSV Headers? Input D when done inputting");
+		System.out.println("----------------------------------------------------");
+		System.out.print("Header " + c + ": ");
+		String input = scan.nextLine();
+		while(!input.equals("D")) {
+			c++;
+			System.out.print("Header " + c + ": ");
+			headers.add(input);
+			input = scan.nextLine();
+		}
+		
+		c=1;
+		
+		System.out.println(headers.toString());
+		System.out.println("What Is the CSV Rows? Input D when done inputting");
+		System.out.println("----------------------------------------------------");
+		input = "";
+		while(!input.equals("D")) {
+			System.out.println("Row " + c);
+			System.out.println("|||||||||||||||||||||||||||");
+			
+			ArrayList<String> row = new ArrayList<String>();
+			int i = 0;
+			while((i<headers.size()) && (!input.equals("D"))) {
+				System.out.print(headers.get(i) + ": ");
+				input = scan.nextLine();
+				row.add(input);
+				i++;
+			}
+			System.out.println();
+			c++;
+			rows.add(row);
+		}
+		
+		System.out.println(headers.toString());
+		scan.close();
+		
+		writeCSV();
+	}
 	
 	public void writeCSV() throws IOException {
 		
 		try {
 			Path path = FileSystems.getDefault().getPath("test.csv").toAbsolutePath();
 			// create FileWriter object with file as parameter 
-	        FileWriter outputfile = new FileWriter(path.toFile()); 
+	        FileWriter outputfile = new FileWriter(path.toFile(), true); 
 	        System.out.println("File" + path.toString());
 	        // create CSVWriter object filewriter object as parameter 
 	        CSVWriter writer = new CSVWriter(outputfile); 
 	  
 	        // adding header to csv 
-	        String[] header = { "Name", "Class", "Marks" }; 
-	        writer.writeNext(header); 
+	        writer.writeNext(headers.toArray(new String[headers.size()])); 
 	  
 	        // add data to csv 
-	        String[] data1 = { "Aman", "10", "620" }; 
-	        writer.writeNext(data1); 
-	        String[] data2 = { "Suraj", "10", "630" }; 
-	        writer.writeNext(data2); 
-	        System.out.println("test");
+	        int i=0;
+	        while(i<rows.size()) {
+	        	String[] data = rows.get(i).toArray(new String[rows.size()]);
+	        	writer.writeNext(data);
+	        	i++;
+	        }
 	  
 	        // closing writer connection 
 	        writer.close(); 
 		}catch (IOException e){
 			System.out.println(e);
 		}
-		
-//		try {
-//			Path path = FileSystems.getDefault().getPath("comments.csv").toAbsolutePath();
-//			String csv = path.toString();
-//
-//			ArrayList<ArrayList<String>> rows = new ArrayList<ArrayList<String>>();
-//
-//				FileWriter csvWriter = new FileWriter("new.csv");
-//				csvWriter.append("Name");
-//				csvWriter.append(",");
-//				csvWriter.append("Role");
-//				csvWriter.append(",");
-//				csvWriter.append("Topic");
-//				csvWriter.append("\n");
-//				
-//				File csvOutputFile = new File(csv);
-//			    try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
-//			        dataLines.
-//			        stream()
-//			          .map(this::convertToCSV)
-//			          .forEach(pw::println);
-//			    }
-////			    assertTrue(csvOutputFile.exists());
-//
-//				csvWriter.flush();
-//				csvWriter.close();
-//				System.out.println("ran");
-//		} catch (IOException e){
-//			System.out.println(e);
-//		}
 	}
 	
 	public String convertToCSV(String[] data) {
@@ -87,11 +96,6 @@ public class FileHandling {
 	}
 	
 	public void readFile() {
-//		BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
-//		while ((row = csvReader.readLine()) != null) {
-//		    String[] data = row.split(",");
-//		    // do something with the data
-//		}
-//		csvReader.close();
+
 	}
 }
