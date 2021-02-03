@@ -1,0 +1,57 @@
+
+Onboarding Notes
+-------------------------------------------------------------------
+https://sx.hcl.com - request certain priveleges for laptop
+Search Tarmac in myHCL
+- Download softscan to declare a machine. Run the file. Will have to re run softscan every couple months
+- Hit purple icon new machine declaration AFTER softscan
+- search myHCL for any additional software 
+
+central market for cooking classes, henry ivning butt
+
+- SAP ID
+- email: evan_watson@hcl.com
+- MetLife car insurance offered reduced for employees
+- Animal insurance
+- LA Fitness & City sports club
+- ESS
+- iSuccess learning
+
+Submit iTime sheet on Friday only!!!!
+
+KEY SYSTEMS
+--------------
+- global claims systems
+- SAS
+- iTime
+- TARMAC
+- search admin in tarmac
+- Safe Exam Browser
+- policy hub
+
+Skils to know
+----------
+- Maven
+- Gradle
+- Comparators
+- Servlet
+- Spring Framework
+- BPM flow
+- mysql workbench
+- stream api
+- C.R.U.D
+
+People
+-----------
+- Wesley Allen, reporting manager(for help)
+- Krishna S Prasad: Developer Instructor
+- Tim Fox(class instructor): tim@elephantscale.com https://www.surveymonkey.com/r/NBKJBF7?trainer=tim%20fox&company=HCL%20US&milestone_id=00060374_01&course=phase-1:%20implement%20oops%20using%20java%20with%20data%20structures%20and%
+
+Extra laptop fix
+-----------------
+sx.hcl.com
+or email Chilam
+
+usafact: Reference order number 2441143.
+
+Fill out 401k and benefits on teams
