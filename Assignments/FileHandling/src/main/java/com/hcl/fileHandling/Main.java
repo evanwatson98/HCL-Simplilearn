@@ -9,7 +9,9 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		FileHandling test = new FileHandling();
 		
-		test.getCsvInput();
+		test.createFile();
+		
+//		test.getCsvInput();
 	}
 
 }
