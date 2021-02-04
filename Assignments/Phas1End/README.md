@@ -1,9 +1,8 @@
-# irtual Key for Your Repositories
+# Virtual Key for Your Repositories
 ### Project 1 
 
-DESCRIPTION
 
-Project objective: 
+## Project objective: 
 
 As a Full Stack Developer, complete the features of the application by planning the development in terms of sprints and then push the source code to the GitHub repository. As this is a prototyped application, the user interaction will be via a command line. 
 
@@ -23,19 +22,20 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
 - Data Structures where sorting and searching techniques are used. 
 
+
 - Generic features and three operations: 
 
-- Retrieving the file names in an ascending order
+- ## Retrieving the file names in an ascending order
 
-- Business-level operations:
+- ## Business-level operations:
 
-- Option to add a user specified file to the application
+- - Option to add a user specified file to the application
 
-- Option to delete a user specified file from the application
+- - Option to delete a user specified file from the application
 
-- Option to search a user specified file from the application
+- - Option to search a user specified file from the application
 
-- Navigation option to close the current execution context and return to the main context
+- - Navigation option to close the current execution context and return to the main context
 
 - Option to close the application
 
@@ -52,19 +52,19 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
 - List the core concepts and algorithms being used to complete this application
 
-- Code to display the welcome screen. It should display:
+- ## Code to display the welcome screen. It should display:
 
-- Application name and the developer details 
+- - Application name and the developer details 
 
-- The details of the user interface such as options displaying the user interaction information 
+- - The details of the user interface such as options displaying the user interaction information 
 
-- Features to accept the user input to select one of the options listed 
+- - Features to accept the user input to select one of the options listed 
 
 - The first option should return the current file names in ascending order. The root directory can be either empty or contain few files or folders in it
 
-- The second option should return the details of the user interface such as options displaying the following:
+- ## The second option should return the details of the user interface such as options displaying the following:
 
-- Add a file to the existing directory list
+- - Add a file to the existing directory list
 
 - You can ignore the case sensitivity of the file names 
 

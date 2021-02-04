@@ -4,9 +4,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.util.stream.Collectors;
-//import org.apache.logging.log4j.LogManager;
-import java.util.stream.Stream;
 import com.opencsv.CSVWriter;
 
 import java.util.ArrayList;
@@ -17,8 +14,12 @@ public class FileHandling {
 	ArrayList<ArrayList<String>> rows = new ArrayList<ArrayList<String>>();
 	ArrayList<String> headers = new ArrayList<String>();
 	
+	//Get User input for rows and headers of the CSV
 	public void getCsvInput() throws IOException {
+		
 		Scanner scan = new Scanner(System.in);
+		
+		//Get header input
 		int c = 1;
 		System.out.println("What Are the CSV Headers? Input D when done inputting");
 		System.out.println("----------------------------------------------------");
@@ -31,15 +32,15 @@ public class FileHandling {
 			input = scan.nextLine();
 		}
 		
+		//Get Row input
 		c=1;
-		
 		System.out.println(headers.toString());
 		System.out.println("What Is the CSV Rows? Input D when done inputting");
 		System.out.println("----------------------------------------------------");
 		input = "";
 		while(!input.equals("D")) {
 			System.out.println("Row " + c);
-			System.out.println("|||||||||||||||||||||||||||");
+			System.out.println(new String(new char[headers.size()]).replace("\0", "|"));
 			
 			ArrayList<String> row = new ArrayList<String>();
 			int i = 0;
@@ -60,10 +61,12 @@ public class FileHandling {
 		writeCSV();
 	}
 	
+	//Write to an existing csv
 	public void writeCSV() throws IOException {
 		
 		try {
-			Path path = FileSystems.getDefault().getPath("test.csv").toAbsolutePath();
+			Path path = FileSystems.getDefault().getPath("src/main/resources/comments.csv").toAbsolutePath();
+			System.out.println(path.toString());
 			// create FileWriter object with file as parameter 
 	        FileWriter outputfile = new FileWriter(path.toFile(), true); 
 	        System.out.println("File" + path.toString());
@@ -87,14 +90,7 @@ public class FileHandling {
 			System.out.println(e);
 		}
 	}
-	
-	public String convertToCSV(String[] data) {
-		System.out.println(Stream.of(data).collect(Collectors.joining(",")));
-	    return Stream.of(data)
-//	      .map(this::escapeSpecialCharacters)
-	      .collect(Collectors.joining(","));
-	}
-	
+
 	public void readFile() {
 
 	}
