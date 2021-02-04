@@ -20,7 +20,7 @@ public class FileHandling {
 	public void getCsvInput() throws IOException {
 		Scanner scan = new Scanner(System.in);
 		int c = 1;
-		System.out.println("What Is the CSV Headers? Input D when done inputting");
+		System.out.println("What Are the CSV Headers? Input D when done inputting");
 		System.out.println("----------------------------------------------------");
 		System.out.print("Header " + c + ": ");
 		String input = scan.nextLine();
