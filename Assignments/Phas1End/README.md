@@ -52,7 +52,7 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
 - List the core concepts and algorithms being used to complete this application
 
-- ## Code to display the welcome screen. It should display:
+- ### Code to display the welcome screen. It should display:
 
 - - Application name and the developer details 
 
@@ -62,27 +62,27 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
 - The first option should return the current file names in ascending order. The root directory can be either empty or contain few files or folders in it
 
-- ## The second option should return the details of the user interface such as options displaying the following:
+- ### The second option should return the details of the user interface such as options displaying the following:
 
-- - Add a file to the existing directory list
+- - ### Add a file to the existing directory list
 
-- You can ignore the case sensitivity of the file names 
+- - - You can ignore the case sensitivity of the file names 
 
-- Delete a user specified file from the existing directory list
+- - ### Delete a user specified file from the existing directory list
 
-- You can add the case sensitivity on the file name in order to ensure that the right file is deleted from the directory list
+- - - You can add the case sensitivity on the file name in order to ensure that the right file is deleted from the directory list
 
-- Return a message if FNF (File not found)
+- - - Return a message if FNF (File not found)
 
-- Search a user specified file from the main directory
+- - ### Search a user specified file from the main directory
 
-- You can add the case sensitivity on the file name to retrieve the correct file
+- - - You can add the case sensitivity on the file name to retrieve the correct file
 
-- Display the result upon successful operation
+- - - Display the result upon successful operation
 
-- Display the result upon unsuccessful operation
+- - - Display the result upon unsuccessful operation
 
-- Option to navigate back to the main context
+- - Option to navigate back to the main context
 
 - There should be a third option to close the application
 
@@ -120,16 +120,16 @@ Company Lockers Pvt. Ltd. hired you as a Full Stack Developer. They aim to digit
 
 - Application should not close, exit, or throw an exception if the user specifies an invalid input.
 
-- You need to submit the final specification document which includes: 
+- ### You need to submit the final specification document which includes: 
 
-- Project and developer details 
+- - Project and developer details 
 
-- Sprints planned and the tasks achieved in them 
+- - Sprints planned and the tasks achieved in them 
 
-- Algorithms and flowcharts of the application 
+- - Algorithms and flowcharts of the application 
 
-- Core concepts used in the project 
+- - Core concepts used in the project 
 
-- Links to the GitHub repository to verify the project completion 
+- - Links to the GitHub repository to verify the project completion 
 
-- Your conclusion on enhancing the application and defining the USPs (Unique Selling Points)
+- - Your conclusion on enhancing the application and defining the USPs (Unique Selling Points)
