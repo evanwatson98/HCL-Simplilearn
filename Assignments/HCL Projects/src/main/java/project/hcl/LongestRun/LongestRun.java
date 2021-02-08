@@ -28,6 +28,7 @@ public class LongestRun {
 	public void searchSequence() {
 		System.out.println("Sequence: " + sequence.getSequence());
 		int seqSize = sequence.getSize();
+		int tempStart = 0;
 		int start = 0;
 		int end = 0;
 		int tempLongestSeq = 0;
@@ -45,23 +46,28 @@ public class LongestRun {
 		
 		for(int i = 0; i< seqSize; i++) {
 			if(i + 1 < seqSize) {
-				if(seq.get(i) <= seq.get(i+1)) {
-					System.out.println(seq.get(i) + ", " + seq.get(i+1));
+				if(seq.get(i) < seq.get(i+1)) {
 					tempLongestSeq++;
+					System.out.println(seq.get(i) + ", " + seq.get(i+1) + " Temp Longest: " + tempLongestSeq + " Real Longest" + longestSeq);
 					if(!running) {
-						start = i;
+						tempStart = i;
 					}
 					running = true;
 				}else if(running && (tempLongestSeq > longestSeq)) {
-					tempLongestSeq = 0;
+					System.out.println("Big run");
+					start = tempStart;
 					longestSeq = tempLongestSeq;
+					tempLongestSeq = 0;
 					running = false;
 					end=i;
+				} else {
+					tempLongestSeq = 0;
+					running = false;
 				}
 			}
 		}
-		
-		System.out.println("Longst Subsequence: " + seq.subList(start, end));
+		System.out.println("Start" + start + "End" + end);
+		System.out.println("Longest Subsequence: " + seq.subList(start, end+1));
 	}
 	
 }
