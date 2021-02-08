@@ -1,4 +1,4 @@
-package com.hcl.fileHandling;
+package project.hcl.FileHandling;
 
 import java.awt.List;
 import java.io.File;
@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandling {
-	
 	ArrayList<ArrayList<String>> rows = new ArrayList<ArrayList<String>>();
 	ArrayList<String> headers = new ArrayList<String>();
 	Scanner scan = new Scanner(System.in);
