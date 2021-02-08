@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class SimpleCalculator extends Calculator{
 	
 	//Set an uneditable array of valid operations
-	private static String[] operations = {"+", "-", "*", "/", "off"};
+	private static final String[] operations = {"+", "-", "*", "/", "off"};
 	
 	//not necessarily needed for this project but could be helpful for bigger applications
 	public String[] getOperations() {

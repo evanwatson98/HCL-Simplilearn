@@ -1,10 +1,16 @@
 package com.hcl.fileHandling;
 
+import java.awt.List;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter; 
 import java.io.IOException;
+import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
 
 import java.util.ArrayList;
@@ -124,8 +130,30 @@ public class FileHandling {
 		}
 	}
 
-	public void readCSV() {
-
+	public void readCSV(String fileName) {
+		try { 
+	        // Create an object of file reader 
+	        // class with CSV file as a parameter. 
+			Path path = FileSystems.getDefault().getPath("src/main/resources/"+fileName).toAbsolutePath();
+	        FileReader filereader = new FileReader(path.toFile()); 
+	  
+	        // create csvReader object and skip first Line 
+	        CSVReader csvReader = new CSVReaderBuilder(filereader) 
+	                                  .withSkipLines(1) 
+	                                  .build(); 
+	        ArrayList<String[]> allData = (ArrayList<String[]>) csvReader.readAll(); 
+	  
+	        // print Data 
+	        for (String[] row : allData) { 
+	            for (String cell : row) { 
+	                System.out.print(cell + "\t"); 
+	            } 
+	            System.out.println(); 
+	        } 
+	    } 
+	    catch (Exception e) { 
+	        e.printStackTrace(); 
+	    } 
 	}
 	
 	//Delete an existing file
