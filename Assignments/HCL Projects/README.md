@@ -6,8 +6,8 @@
 ### Practice Project #2:
 ## <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/ValEmail"> Validation of an Email ID
 
-### Practice Project 3: File Handling
-Note this project is meant for CSV files
+## Practice Project 3: <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/HCL%20Projects/src/main/java/project/hcl/FileHandling"> File Handling
+### Note this project is meant for CSV files
 
 To run this project go to the Main.java class. User input will be requested. 
 The first input will be for the file name. If the file name you put in doesn't exist, 
