@@ -9,7 +9,7 @@ public class Sequence {
 	private int arraySize;
 	private int min = 10;
 	private int max = 100;
-	ArrayList<Integer> sequence;
+	private ArrayList<Integer> sequence;
 	
 	public Sequence(int len) {
 		if(len == 0) {

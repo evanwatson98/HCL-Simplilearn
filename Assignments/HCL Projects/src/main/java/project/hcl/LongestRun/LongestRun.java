@@ -44,25 +44,24 @@ public class LongestRun {
 //			}
 //		}
 		
-		for(int i = 0; i< seqSize; i++) {
-			if(i + 1 < seqSize) {
-				if(seq.get(i) < seq.get(i+1)) {
-					tempLongestSeq++;
-					System.out.println(seq.get(i) + ", " + seq.get(i+1));
-					if(!running) {
-						tempStart = i;
-					}
-					running = true;
-				}else if(running && (tempLongestSeq > longestSeq)) {
-					start = tempStart;
-					longestSeq = tempLongestSeq;
-					tempLongestSeq = 0;
-					running = false;
-					end=i;
-				} else {
-					tempLongestSeq = 0;
-					running = false;
+		//what if the last number in the list is a part of the sequence
+		for(int i = 0; i< seqSize-1; i++) {
+			if(seq.get(i) < seq.get(i+1)) {
+				tempLongestSeq++;
+				System.out.println(seq.get(i) + ", " + seq.get(i+1));
+				if(!running) {
+					tempStart = i;
 				}
+				running = true;
+			}else if(running && (tempLongestSeq > longestSeq)) {
+				start = tempStart;
+				longestSeq = tempLongestSeq;
+				tempLongestSeq = 0;
+				running = false;
+				end=i;
+			} else {
+				tempLongestSeq = 0;
+				running = false;
 			}
 		}
 		System.out.println("Start" + start + "End" + end);
