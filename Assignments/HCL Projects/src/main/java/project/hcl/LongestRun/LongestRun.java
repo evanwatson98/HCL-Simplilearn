@@ -48,13 +48,12 @@ public class LongestRun {
 			if(i + 1 < seqSize) {
 				if(seq.get(i) < seq.get(i+1)) {
 					tempLongestSeq++;
-					System.out.println(seq.get(i) + ", " + seq.get(i+1) + " Temp Longest: " + tempLongestSeq + " Real Longest" + longestSeq);
+					System.out.println(seq.get(i) + ", " + seq.get(i+1));
 					if(!running) {
 						tempStart = i;
 					}
 					running = true;
 				}else if(running && (tempLongestSeq > longestSeq)) {
-					System.out.println("Big run");
 					start = tempStart;
 					longestSeq = tempLongestSeq;
 					tempLongestSeq = 0;

@@ -25,7 +25,8 @@ public class FileHandling {
 	public void createFile() {
 		System.out.print("File Name: ");
 		fileName = scan.nextLine();
-		File myFile = new File(fileName);
+		Path path = FileSystems.getDefault().getPath("src/main/resources/"+fileName).toAbsolutePath();
+		File myFile = path.toFile();
 		String[] spFileName = fileName.split("\\.");
 		try {
 			if(myFile.exists()) {
@@ -85,7 +86,9 @@ public class FileHandling {
 			while((i<headers.size()) && (!input.equals("D"))) {
 				System.out.print(headers.get(i) + ": ");
 				input = scan.nextLine();
-				row.add(input);
+				if(!input.equals("D")){
+					row.add(input);
+				}
 				i++;
 			}
 			System.out.println();
@@ -93,7 +96,6 @@ public class FileHandling {
 			rows.add(row);
 		}
 		
-		System.out.println(headers.toString());
 		scan.close();
 		
 		writeCSV();
@@ -104,10 +106,9 @@ public class FileHandling {
 		
 		try {
 			Path path = FileSystems.getDefault().getPath("src/main/resources/"+fileName).toAbsolutePath();
-			System.out.println(path.toString());
+			System.out.println("File: " +path.toString());
 			// create FileWriter object with file as parameter 
 	        FileWriter outputfile = new FileWriter(path.toFile(), true); 
-	        System.out.println("File" + path.toString());
 	        // create CSVWriter object filewriter object as parameter 
 	        CSVWriter writer = new CSVWriter(outputfile); 
 	  
@@ -124,6 +125,7 @@ public class FileHandling {
 	  
 	        // closing writer connection 
 	        writer.close(); 
+	        readCSV(fileName);
 		}catch (IOException e){
 			System.out.println(e);
 		}
@@ -149,6 +151,8 @@ public class FileHandling {
 	            } 
 	            System.out.println(); 
 	        } 
+	        csvReader.close();
+	        filereader.close();
 	    } 
 	    catch (Exception e) { 
 	        e.printStackTrace(); 
