@@ -2,6 +2,7 @@
 
 ### Practice Project #1:
 ## <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/Calculator1.27"> Creating an Arithmetic Calculator
+### N/A
 
 <br>
 
@@ -21,5 +22,7 @@ in a .csv file(created or not) you will be sent to the next prompt. This asks yo
 the headers of the csv file(ex. First Name, Last Name, etc..). Once you type in "D" you 
 are then promted to fill in rows for the csv. Once you type "D" the file will be appened. 
 Once done, the file will read and print out the contents of the csv. 
+
+<img src="src/main/resources/Images/csvReader.JPG" alt="drawing" width="200"/>
 
 <br>
