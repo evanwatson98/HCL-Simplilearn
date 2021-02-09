@@ -1,12 +1,12 @@
-# Assignments
+# Assignments Write Up
 
 ### Practice Project #1:
 ## <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/Calculator1.27"> Creating an Arithmetic Calculator
 
 ### Practice Project #2:
 ## <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/ValEmail"> Validation of an Email ID
-
-## Practice Project 3: <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/HCL%20Projects/src/main/java/project/hcl/FileHandling"> File Handling
+<br>
+## <a href="https://github.com/evanwatson98/HCL-Simplilearn/tree/main/Assignments/HCL%20Projects/src/main/java/project/hcl/FileHandling"> Practice Project 3: File Handling
 ### Note this project is meant for CSV files
 
 To run this project go to the Main.java class. User input will be requested. 
