@@ -48,7 +48,7 @@ public class LongestRun {
 		for(int i = 0; i< seqSize-1; i++) {
 			if(seq.get(i) < seq.get(i+1)) {
 				tempLongestSeq++;
-				System.out.println(seq.get(i) + ", " + seq.get(i+1));
+//				System.out.println(seq.get(i) + ", " + seq.get(i+1));
 				if(!running) {
 					tempStart = i;
 				}
@@ -64,7 +64,7 @@ public class LongestRun {
 				running = false;
 			}
 		}
-		System.out.println("Start" + start + "End" + end);
+		System.out.println("Longest SubSequence\n-------------------- \nStarts at index: " + start + " \nEnds at index: " + end);
 		System.out.println("Longest Subsequence: " + seq.subList(start, end+1));
 	}
 	
