@@ -33,39 +33,29 @@ public class LongestRun {
 		int end = 0;
 		int tempLongestSeq = 0;
 		int longestSeq = 0;
-		boolean running = false;
 		ArrayList<Integer> seq = sequence.getSequence();
 		
-//		for(int i = 0; i < seqSize; i = i + tempLongestSeq) {
-//			if(i+tempLongestSeq<seqSize) {
-//				if(seq.get(i) <= seq.get(i+tempLongestSeq)) {
-//					tempLongestSeq++;
-//				}
-//			}
-//		}
+		//Add boolean to not hit the second if?
 		
 		//what if the last number in the list is a part of the sequence
-		for(int i = 0; i< seqSize-1; i++) {
-			if(seq.get(i) < seq.get(i+1)) {
-				tempLongestSeq++;
-//				System.out.println(seq.get(i) + ", " + seq.get(i+1));
-				if(!running) {
+		for(int i = 1; i< seqSize; i++) {
+			
+			if(seq.get(i) > seq.get(i-1)) {
+				if(tempLongestSeq == 0) {
 					tempStart = i;
 				}
-				running = true;
-			}else if(running && (tempLongestSeq > longestSeq)) {
+				tempLongestSeq++;				
+			}else if(tempLongestSeq > longestSeq) {
 				start = tempStart;
 				longestSeq = tempLongestSeq;
 				tempLongestSeq = 0;
-				running = false;
 				end=i;
 			} else {
 				tempLongestSeq = 0;
-				running = false;
 			}
 		}
-		System.out.println("Longest SubSequence\n-------------------- \nStarts at index: " + start + " \nEnds at index: " + end);
-		System.out.println("Longest Subsequence: " + seq.subList(start, end+1));
+		System.out.println("Longest SubSequence\n-------------------- \nStarts at index: " + (start-1) + " \nEnds at index: " + end);
+		System.out.println("Longest Subsequence: " + seq.subList(start-1, end));
 	}
 	
 }
