@@ -5,12 +5,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Display {
-	//May not need arrlist
-//		private static ArrayList<Integer> arrlist = new ArrayList<Integer>();
-		private static ArrayList<Integer> expenses = new ArrayList<Integer>();
-		
-	    Scanner sc = new Scanner(System.in);
 
+		private static ArrayList<Integer> expenses = new ArrayList<Integer>();
+
+		Scanner sc = new Scanner(System.in);
+		int  options = 0;
 		public void addSampleExpenses() {
 			expenses.add(1000);
 	        expenses.add(32000);
@@ -32,21 +31,21 @@ public class Display {
 	            System.out.println(arr[i]);
 	            // display the all the Strings mentioned in the String array
 	        }
-//	        expenses.addAll(arrlist);
+
 	        System.out.println("\nEnter your choice:\t");
-	        int  options = 0;
+	        int  options = 0;	        
 	        try {
 	        	options =  sc.nextInt();
 	        }catch (InputMismatchException e) {
-	        	System.err.println("Improper format, please try again");
+	        	System.err.println("Wrong: Improper format, please try again");
+	        	sc.next();
 	        	return true;
 	        }
-	        
+	        System.err.println("Test");
 	        switch (options){
 	            case 1:
 	                System.out.println("Your saved expenses are listed below: \n");
 	                System.out.println(expenses+"\n");
-	                //Do not need recursion 
 	                break;
 	            case 2:
 	                System.out.println("Enter the value to add your Expense: \n");
@@ -56,12 +55,12 @@ public class Display {
 	                	value = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
+	    	        	sc.next();
 	    	        	return true;
 	    	        }
 	                
 	                expenses.add(value);
 	                System.out.println("Your value is updated\n");
-//	                expenses.addAll(arrlist);
 	                System.out.println(expenses+"\n");
 	                break;
 	            case 3:
@@ -72,7 +71,8 @@ public class Display {
 	                	con_choice = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
-	    	        	return true;
+	    	        	sc.next();
+	    	        	break;
 	    	        }
 	                
 	                if(con_choice==options){
@@ -82,7 +82,7 @@ public class Display {
 	                } else {
 	                    System.out.println("Oops... try again!");
 	                }
-	                return true;
+	                break;
 	            case 4:
 	                sortExpenses(expenses);
 	                break;
@@ -94,7 +94,8 @@ public class Display {
 	                	search = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
-	    	        	return true;
+	    	        	sc.next();
+	    	        	break;
 	    	        }
 	                
 	                searchExpenses(expenses, search);
@@ -105,7 +106,7 @@ public class Display {
 	                return false;
 	            default:
 	                System.err.println("You have made an invalid choice!");
-	                return true;
+	                break;
 	        }
 	        return true;
 	    }
@@ -116,8 +117,8 @@ public class Display {
 		
 	    public void searchExpenses(ArrayList<Integer> arrayList, int searchExpense) {
 	        int leng = arrayList.size();        
+	        
 	        //Linear search
-	        //Complete the method
 	        int i = 0;
 	        while(i < leng) {
 	        	int expense = expenses.get(i);
@@ -129,7 +130,7 @@ public class Display {
 	        }
 	        System.out.println("Did not find expense");
 	        
-	        //binary search
+	        //binary search, would need a sorted list to work
 //	        int i = 0;
 //	        while(i < leng && i > 0) {
 //	        	int expense = expenses.get(i);
@@ -150,20 +151,10 @@ public class Display {
 	    
 	    private static void sortExpenses(ArrayList<Integer> arrayList) {
 	        int arrLength =  arrayList.size();
-	       //Complete the method. The expenses should be sorted in ascending order.
-//	        MergeSort objMergeSort = new MergeSort();
-//	        objMergeSort.sort(arrayList,0,arrayList.get(arrLength - 1) );
 	        
 	        QuickSort quickObj = new QuickSort();
 	        quickObj.sort(arrayList, 0, arrLength - 1);
 	        System.out.println("QuickSort " + arrayList.toString());
 	    }
-	    
-	    static void printArray(int arr[])
-		{
-		    int n = arr.length;
-		    for (int i=0; i<n; ++i)
-		        System.out.print(arr[i] + " ");
-		    System.out.println();
-		}
+
 }
