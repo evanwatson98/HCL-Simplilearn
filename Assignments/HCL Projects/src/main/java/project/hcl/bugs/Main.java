@@ -9,8 +9,9 @@ public class Main {
         System.out.println("\n**************************************\n");
         System.out.println("\tWelcome to TheDesk \n");
         System.out.println("**************************************");
-        while(true) {
-        	display.optionsSelection();
+        boolean isRunning = true;
+        while(isRunning) {
+        	isRunning = display.optionsSelection();
         }
     }
     

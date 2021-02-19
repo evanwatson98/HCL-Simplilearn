@@ -19,7 +19,7 @@ public class Display {
 	        expenses.add(110);
 		}
 		
-		public void optionsSelection() {
+		public boolean optionsSelection() {
 	        String[] arr = {"1. I wish to review my expenditure",
 	                "2. I wish to add my expenditure",
 	                "3. I wish to delete my expenditure",
@@ -39,7 +39,7 @@ public class Display {
 	        	options =  sc.nextInt();
 	        }catch (InputMismatchException e) {
 	        	System.err.println("Improper format, please try again");
-	        	return;
+	        	return true;
 	        }
 	        
 	        switch (options){
@@ -56,7 +56,7 @@ public class Display {
 	                	value = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
-	    	        	return;
+	    	        	return true;
 	    	        }
 	                
 	                expenses.add(value);
@@ -72,7 +72,7 @@ public class Display {
 	                	con_choice = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
-	    	        	return;
+	    	        	return true;
 	    	        }
 	                
 	                if(con_choice==options){
@@ -82,7 +82,7 @@ public class Display {
 	                } else {
 	                    System.out.println("Oops... try again!");
 	                }
-	                return;
+	                return true;
 	            case 4:
 	                sortExpenses(expenses);
 	                break;
@@ -94,7 +94,7 @@ public class Display {
 	                	search = sc.nextInt();
 	    	        }catch (InputMismatchException e) {
 	    	        	System.err.println("Improper format, please try again");
-	    	        	return;
+	    	        	return true;
 	    	        }
 	                
 	                searchExpenses(expenses, search);
@@ -102,12 +102,12 @@ public class Display {
 	            case 6:
 	            	sc.close();
 	                closeApp();
-	                break;
+	                return false;
 	            default:
-	            	sc.close();
-	                System.out.println("You have made an invalid choice!");
-	                break;
+	                System.err.println("You have made an invalid choice!");
+	                return true;
 	        }
+	        return true;
 	    }
 
 		private static void closeApp() {
