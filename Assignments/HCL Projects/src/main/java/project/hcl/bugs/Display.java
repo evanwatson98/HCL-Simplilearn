@@ -1,6 +1,7 @@
 package project.hcl.bugs;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Display {
@@ -33,7 +34,14 @@ public class Display {
 	        }
 //	        expenses.addAll(arrlist);
 	        System.out.println("\nEnter your choice:\t");
-	        int  options =  sc.nextInt();
+	        int  options = 0;
+	        try {
+	        	options =  sc.nextInt();
+	        }catch (InputMismatchException e) {
+	        	System.err.println("Improper format, please try again");
+	        	return;
+	        }
+	        
 	        switch (options){
 	            case 1:
 	                System.out.println("Your saved expenses are listed below: \n");
@@ -42,7 +50,15 @@ public class Display {
 	                break;
 	            case 2:
 	                System.out.println("Enter the value to add your Expense: \n");
-	                int value = sc.nextInt();
+	                
+	                int value = 0;
+	                try {
+	                	value = sc.nextInt();
+	    	        }catch (InputMismatchException e) {
+	    	        	System.err.println("Improper format, please try again");
+	    	        	return;
+	    	        }
+	                
 	                expenses.add(value);
 	                System.out.println("Your value is updated\n");
 //	                expenses.addAll(arrlist);
@@ -51,20 +67,36 @@ public class Display {
 	            case 3:
 	                System.out.println("You are about the delete all your expenses! \nConfirm again by selecting the same option...\n");
 	                int con_choice = sc.nextInt();
+	                
+	                try {
+	                	con_choice = sc.nextInt();
+	    	        }catch (InputMismatchException e) {
+	    	        	System.err.println("Improper format, please try again");
+	    	        	return;
+	    	        }
+	                
 	                if(con_choice==options){
 	                       expenses.clear();
-	                    System.out.println(expenses+"\n");
-	                    System.out.println("All your expenses are erased!\n");
+	                       System.out.println(expenses+"\n");
+	                       System.out.println("All your expenses are erased!\n");
 	                } else {
 	                    System.out.println("Oops... try again!");
 	                }
-	                break;
+	                return;
 	            case 4:
 	                sortExpenses(expenses);
 	                break;
 	            case 5:
 	                System.out.println("Enter the expense you need to search:\t");
-	                int search = sc.nextInt();
+	                
+	                int search = 0;
+	                try {
+	                	search = sc.nextInt();
+	    	        }catch (InputMismatchException e) {
+	    	        	System.err.println("Improper format, please try again");
+	    	        	return;
+	    	        }
+	                
 	                searchExpenses(expenses, search);
 	                break;
 	            case 6:
