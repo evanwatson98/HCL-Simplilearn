@@ -12,8 +12,6 @@ public class Main {
         while(true) {
         	display.optionsSelection();
         }
-        
-
     }
     
     //TO-DO Remove recusrion

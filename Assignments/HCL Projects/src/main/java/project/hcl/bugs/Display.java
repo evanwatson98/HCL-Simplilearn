@@ -5,17 +5,16 @@ import java.util.Scanner;
 
 public class Display {
 	//May not need arrlist
-		private static ArrayList<Integer> arrlist = new ArrayList<Integer>();
+//		private static ArrayList<Integer> arrlist = new ArrayList<Integer>();
 		private static ArrayList<Integer> expenses = new ArrayList<Integer>();
 		
 	    Scanner sc = new Scanner(System.in);
 
-		
 		public void addSampleExpenses() {
 			expenses.add(1000);
+	        expenses.add(32000);
 	        expenses.add(2300);
 	        expenses.add(45000);
-	        expenses.add(32000);
 	        expenses.add(110);
 		}
 		
@@ -46,7 +45,7 @@ public class Display {
 	                int value = sc.nextInt();
 	                expenses.add(value);
 	                System.out.println("Your value is updated\n");
-	                expenses.addAll(arrlist);
+//	                expenses.addAll(arrlist);
 	                System.out.println(expenses+"\n");
 	                break;
 	            case 3:
@@ -81,7 +80,7 @@ public class Display {
 
 		private static void closeApp() {
 	        System.out.println("Closing your application... \nThank you!");
-	            }
+	    }
 		
 	    public void searchExpenses(ArrayList<Integer> arrayList, int searchExpense) {
 	        int leng = arrayList.size();        
@@ -120,8 +119,12 @@ public class Display {
 	    private static void sortExpenses(ArrayList<Integer> arrayList) {
 	        int arrLength =  arrayList.size();
 	       //Complete the method. The expenses should be sorted in ascending order.
-	        MergeSort objMergeSort = new MergeSort();
-	        objMergeSort.merge(arrayList,arrayList.get(0), arrayList.get(arrLength / 2),arrayList.get(arrLength - 1) );
+//	        MergeSort objMergeSort = new MergeSort();
+//	        objMergeSort.sort(arrayList,0,arrayList.get(arrLength - 1) );
+	        
+	        QuickSort quickObj = new QuickSort();
+	        quickObj.sort(arrayList, 0, arrLength - 1);
+	        System.out.println("QuickSort " + arrayList.toString());
 	    }
 	    
 	    static void printArray(int arr[])

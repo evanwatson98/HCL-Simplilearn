@@ -3,9 +3,11 @@ package project.hcl.bugs;
 import java.util.ArrayList;
 
 public class MergeSort {
-	public void merge(ArrayList<Integer> arr, Integer l, Integer m, Integer r)
+	
+	ArrayList<Integer> arr;
+
+	public void merge(int l, int m, int r)
     {
-        
         int n1 = m - l + 1;
         int n2 = r - m;
 
@@ -28,19 +30,19 @@ public class MergeSort {
         {
             if (L[i] <= R[j])
             {
-            	arr.set(k, L[i]);
+            	this.arr.set(k, L[i]);
                 i++;
             }
             else
             {
-            	arr.set(k, R[j]);
+            	this.arr.set(k, R[j]);
                 j++;
             }
             k++;
         }
         while (i < n1)
         {
-        	arr.set(k,L[i]);
+        	this.arr.set(k,L[i]);
             i++;
             k++;
         }
@@ -48,11 +50,38 @@ public class MergeSort {
         
         while (j < n2)
         {
-        	arr.set(k, R[j]);
+        	this.arr.set(k, R[j]);
             j++;
             k++;
 
     }
         
     }
+	
+	
+	void sort(ArrayList<Integer> arr, Integer l, Integer r)
+    {
+		this.arr = arr;
+		System.out.println("Sort");
+        if (l < r)
+        {
+            int m = (l+r)/2;
+            
+            sort(arr, l, m);
+            sort(arr , m+1, r);
+            
+            merge(l, m, r);
+        }
+        
+        System.out.println("Merge" + arr.toString());
+    }
+
+        static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
 }
