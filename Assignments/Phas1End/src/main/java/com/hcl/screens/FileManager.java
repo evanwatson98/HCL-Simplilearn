@@ -24,6 +24,11 @@ public class FileManager {
 		
 		int option = 0;
         while(option != 4) {
+        	
+        	System.out.println(" ___ o      ___");
+        	System.out.println("|__  | |   |_");
+        	System.out.println("|    | |__ |___");
+
         	System.out.println("\nFFFFFFFFFFFFFFFFFFFFFFFF\nManage Files\nFFFFFFFFFFFFFFFFFFFFFFFF");
     		System.out.println("File Option #1: Add File \nFile Option #2: Delete File\nFile Option #3: Search\nFile Option #4: Go Home\nFile Option #5: Close App");
     		
@@ -44,14 +49,12 @@ public class FileManager {
 				case 1: 
 					AddFile addFile = new AddFile(mainDir);
 					addFile.create();
-					System.out.println(files.toString());
 					break;
 				//Delete an Existing File
 				//Run on Separate thread?
 				case 2:
 					DeleteFile deleteFile = new DeleteFile(mainDir);
 					deleteFile.delete();
-					System.out.println(files.toString());
 					break;
 				//Search for a file
 				case 3:

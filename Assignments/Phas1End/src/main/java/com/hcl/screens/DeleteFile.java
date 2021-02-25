@@ -16,6 +16,8 @@ public class DeleteFile {
 	}
 	
 	 public void delete() {
+		System.out.println("Choose a file to delete: ");
+		mainDir.printFiles();
 		System.out.println("File Name: ");
 		Scanner in = Welcome.in;
 		String fileName = in.next();

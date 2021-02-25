@@ -1,9 +1,13 @@
 package com.hcl.screens;
 
+import java.io.File;
+
 //import com.hcl.entities.*;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.InputMismatchException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import com.hcl.entities.Mdirectory;
@@ -36,9 +40,12 @@ public class Welcome {
 		
 //		Mdirectory mDirectory = new Mdirectory();
         while(option != closeOption) {
-        	System.out.println("\nHHHHHHHHHHHHHHHHHHHH\nHome Page\nHHHHHHHHHHHHHHHHHHHH");
+        	System.out.println("      ___            ____");
+        	System.out.println("|__| |   |  /\\  /\\  |__");
+        	System.out.println("|  | |___| /  \\/  \\ |____\n");
+
         	System.out.println("Please choose an option");
-    		System.out.println("Option #1: Display Ordered Files \nOption #2: File Interface \nOption #3: Close App");
+    		System.out.println("Option #1: Display Ordered Files \nOption #2: File Manager \nOption #3: Close App");
         	
 			option = getUserInput();
 			
@@ -47,6 +54,9 @@ public class Welcome {
 					System.err.println("Wrong: Improper format, please try again");
 					break;
 				case 1: 
+					LinkedList<File> files = mainDir.getFiles();
+					Collections.sort(files);
+					mainDir.printFiles();
 					break;
 				case 2:
 					FileManager manage = new FileManager(mainDir);
