@@ -41,7 +41,6 @@ public class Display {
 	        	sc.next();
 	        	return true;
 	        }
-	        System.err.println("Test");
 	        switch (options){
 	            case 1:
 	                System.out.println("Your saved expenses are listed below: \n");

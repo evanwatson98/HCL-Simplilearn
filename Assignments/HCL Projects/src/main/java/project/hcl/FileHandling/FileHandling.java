@@ -1,11 +1,9 @@
 package project.hcl.FileHandling;
 
-import java.awt.List;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter; 
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
