@@ -28,7 +28,7 @@ public class AddFile {
 		    	  mainDir.getFiles().add(file);
 		        return true;
 		      } else {
-		        System.out.println("File already exists.");
+		        System.out.println("This File Already Exits, no need to add another");
 		        return false;
 		      }
 		}catch (IOException e){

@@ -22,6 +22,7 @@ public class Welcome {
 	
 	Mdirectory mainDir = new Mdirectory();
 	
+	//Set up the main directory to work from
 	public void buildMainDir() {
 		mainDir.grabFiles();
 	}
@@ -37,8 +38,7 @@ public class Welcome {
 		System.out.println("");
 		System.out.println("Developer: Evan Watson\n");
 		
-		
-//		Mdirectory mDirectory = new Mdirectory();
+		//Keep asking the user what option they want from the home screen
         while(option != closeOption) {
         	System.out.println("      ___            ____");
         	System.out.println("|__| |   |  /\\  /\\  |__");
@@ -50,14 +50,19 @@ public class Welcome {
 			option = getUserInput();
 			
 			switch(option) {
+				//user put an invalid input (String format)
 				case 0: 
 					System.err.println("Wrong: Improper format, please try again");
 					break;
+				//Sort Files
 				case 1: 
 					LinkedList<File> files = mainDir.getFiles();
+					//Files are already ordered by default since I am grabbing directly from the file list
+					//However when I add a file in this program, I do not reload the LinkedList, I append it
 					Collections.sort(files);
 					mainDir.printFiles();
 					break;
+				//Open the file manager screen
 				case 2:
 					FileManager manage = new FileManager(mainDir);
 					int manDisplay = manage.display();
@@ -65,17 +70,21 @@ public class Welcome {
 						option = closeOption;
 					}
 					break;
+				//Turn off application
 				case 3: 
 					break;
+				//Choice is a valid input tyoe(an integer), but is not a valid choice to pick from
 				default:
-		            System.err.println("You have made an invalid choice!");
+		            System.err.println("You have made an invalid choice!...try again");
 		            break;
 			}
         }
+        //Close scanner
         in.close();
 		
 	}
 	
+	//Grab and Validate user input 
 	private int getUserInput() {
 		
 		int option;
@@ -94,6 +103,7 @@ public class Welcome {
 		this.option = op;
 	}
 	
+	//If I want to add/remove an option, the close option will be changed. The close option will help with a clean exit when a sub screen is closing the program.
 	public int getCloseOption() {
 		return this.closeOption;
 	}

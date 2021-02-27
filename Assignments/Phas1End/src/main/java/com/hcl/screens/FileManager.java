@@ -2,8 +2,7 @@ package com.hcl.screens;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
+
 import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -31,6 +30,7 @@ public class FileManager {
 
         	System.out.println("\nFFFFFFFFFFFFFFFFFFFFFFFF\nManage Files\nFFFFFFFFFFFFFFFFFFFFFFFF");
     		System.out.println("File Option #1: Add File \nFile Option #2: Delete File\nFile Option #3: Search\nFile Option #4: Go Home\nFile Option #5: Close App");
+    		
     		
 			try {
 	        	option =  in.nextInt();

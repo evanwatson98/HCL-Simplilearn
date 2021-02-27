@@ -1,0 +1,1 @@
+Static is made at runtime or class variable, instance is made only when the object is made, local variable is in a method and must be initialized
