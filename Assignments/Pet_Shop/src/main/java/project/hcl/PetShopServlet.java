@@ -53,38 +53,44 @@ public class PetShopServlet extends HttpServlet {
             PetJDBC conn = new PetJDBC(("jdbc:mysql://localhost:3306/pets"), ("springuser"), ("ThePassword"));
         	java.sql.Statement stmt = conn.getConnection().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             
-        	ResultSet rst = stmt.executeQuery("select count(*) from products");
         	int petId = 0;
-        	 
+        	boolean hasError = false;
         	if(pet.isEmpty() ) {
             	out.print("<h1 style=\"color: red\">Must input someting</h1>");
+            	hasError = true;
             }else if(!pet.matches("-?(0|[1-9]\\d*)")) {
             	out.println("<h1 style=\"color: red\">Not a number. Please Try again</h1>");
+            	hasError = true;
             }else {
-            	Integer.parseInt(pet);
+            	ResultSet rst = stmt.executeQuery("select count(*) from products");
+
+            	petId = Integer.parseInt(pet);
              	 while (rst.next()) {
              		 id = rst.getInt(1);
              	 }
-            	if(0 >= petId || petId >= id) {
+            	if(0 > petId || petId > id) {
+            		hasError = true;
                    	out.println("<h1 style=\"color: red\">Pet ID: " + pet + " is greater than or less than the total pet IDs: " + id +". Please try a different #</h1>");
                    }
             	}
             	
-        	rst = stmt.executeQuery("select * from products where id=" + pet);
-   
+        	if(hasError == false) {
+        		ResultSet rst = stmt.executeQuery("select * from products where id=" + pet);
+        		   
+                
+                while (rst.next()) {
+                    out.println("<tr><td>" + rst.getString("name") + "</td>" + "<td>" +
+                    		rst.getString("color") + "</td><td>" + rst.getBigDecimal("price") + "</td></tr>");
+                }
+                
+                out.println("</table>");
             
-            while (rst.next()) {
-                out.println("<tr><td>" + rst.getString("name") + "</td>" + "<td>" +
-                		rst.getString("color") + "</td><td>" + rst.getBigDecimal("price") + "</td></tr>");
-            }
+                stmt.close();        
+       
             
-            out.println("</table>");
-        
-            stmt.close();        
-   
-        
-            out.println("</body></html>");
-            conn.closeConnection();
+                out.println("</body></html>");
+                conn.closeConnection();
+        	}
         
         } catch (ClassNotFoundException e) {
         	e.printStackTrace();
