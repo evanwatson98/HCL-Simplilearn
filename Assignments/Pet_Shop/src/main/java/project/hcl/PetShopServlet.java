@@ -39,24 +39,39 @@ public class PetShopServlet extends HttpServlet {
 		
         // TODO Auto-generated method stub
 		
-		int id;
+		int id = 0;
         
         try {
         	PrintWriter out = response.getWriter();
             out.println("<html><body>");
             
             String pet = request.getParameter("petid");
-                 
 //            InputStream in = getServletContext().getResourceAsStream("/WEB-INF/config.properties");
 //            Properties props = new Properties();
 //            props.load(in);
                 
             PetJDBC conn = new PetJDBC(("jdbc:mysql://localhost:3306/pets"), ("springuser"), ("ThePassword"));
         	java.sql.Statement stmt = conn.getConnection().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rst = stmt.executeQuery("select * from products where id=" + pet);
-   
-            out.println("<table><tr><th>Name</th><th>Color</th><th>Price</th></tr>");
             
+        	ResultSet rst = stmt.executeQuery("select count(*) from products");
+        	int petId = 0;
+        	 
+        	if(pet.isEmpty() ) {
+            	out.print("<h1 style=\"color: red\">Must input someting</h1>");
+            }else if(!pet.matches("-?(0|[1-9]\\d*)")) {
+            	out.println("<h1 style=\"color: red\">Not a number. Please Try again</h1>");
+            }else {
+            	Integer.parseInt(pet);
+             	 while (rst.next()) {
+             		 id = rst.getInt(1);
+             	 }
+            	if(0 >= petId || petId >= id) {
+                   	out.println("<h1 style=\"color: red\">Pet ID: " + pet + " is greater than or less than the total pet IDs: " + id +". Please try a different #</h1>");
+                   }
+            	}
+            	
+        	rst = stmt.executeQuery("select * from products where id=" + pet);
+   
             
             while (rst.next()) {
                 out.println("<tr><td>" + rst.getString("name") + "</td>" + "<td>" +
@@ -77,7 +92,6 @@ public class PetShopServlet extends HttpServlet {
         	e.printStackTrace();
         }
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

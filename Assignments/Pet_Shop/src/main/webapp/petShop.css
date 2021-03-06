@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+.discoverContainer {
+    width: 98%;
+    display:flex;
+    flex-wrap: wrap;
+    /* padding: 2rem; */
+    padding-top: 4rem;
+    justify-content: space-between ;
+    margin-left: 4rem;
+    /* margin-right: 50rem; */
+}
+
+.dFlex{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.projectLink{
+	padding-right: 40px;
+    width: 20rem;
+    margin-top: 2%;
+}
