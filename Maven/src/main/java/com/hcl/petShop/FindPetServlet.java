@@ -44,7 +44,7 @@ public class FindPetServlet extends HttpServlet {
              
              Session session = factory.openSession();
              // using HQL
-             List<Pet> list = session.createQuery("from products", Pet.class).list();
+             List<Pet> list = session.createQuery("from Pet", Pet.class).list();
              
              session.close();
              

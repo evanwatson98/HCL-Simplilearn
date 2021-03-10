@@ -15,10 +15,22 @@
     <servlet-name>FindPetServlet</servlet-name>
     <servlet-class>com.hcl.petShop.FindPetServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>AddPetServlet</display-name>
+    <servlet-name>AddPetServlet</servlet-name>
+    <servlet-class>com.hcl.petShop.AddPetServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>FindPetServlet</servlet-name>
     <url-pattern>/SearchPet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>AddPetServlet</servlet-name>
+    <url-pattern>/addPet</url-pattern>
   </servlet-mapping>
 
 </web-app>	
