@@ -67,5 +67,4 @@ public class AddPetServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-
 }
