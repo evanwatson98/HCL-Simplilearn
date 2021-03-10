@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Pet Shop</title>
+  <link rel="shortcut icon" type="image/svg+xml" href="images/pets-24px.svg" />
 
 <link rel="stylesheet" href="searchPet.css">
 
@@ -43,104 +44,108 @@
       </li>
     </ul>
   </div>
-</nav>		
-		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">		
-		  <div class="carousel-inner">
-		    <div class="carousel-item active" style="background-image: url(images/pinkPet.jpg)">
-		      <div class="carouselCont" style="color: white; position: absolute; top: 0; left: 0; padding-left: 4rem; padding-top: 2rem;">
-		      	<h1>Find a Pet</h1>
-		      	<p style="font-size: 1rem; width: 30%;">Find an adoring pet by searching for a pet that best fits you!</p>
+</nav>
+
+	<img src="images/account_circle-24px.svg" style="width: 3rem; height: auto; position: absolute; top:2px; right: 5rem;">    
+	      	
+	      	    
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">		
+	  <div class="carousel-inner">
+	    <div class="carousel-item active" style="background-image: url(images/pinkPet.jpg)">
+	      <div class="carouselCont" style="color: white; position: absolute; top: 0; left: 0; padding-left: 4rem; padding-top: 2rem;">
+	      	<h1>Find a Pet</h1>
+	      	<p style="font-size: 1rem; width: 30%;">Find an adoring pet by searching for a pet that best fits you!</p>
+	      </div>
+	    </div>
+	    <div class="carousel-item" style="background-image: url(images/petLook.jpg)">
+		    <div class="carouselCont" style="color: white; position: absolute; top: 0; left: 0; padding-left: 4rem; padding-top: 2rem;">
+		      	<h1>Adoption</h1>
+		      	<p style="font-size: 1rem; width: 25%;">Add a pet to our web site to put them up for adoption. We will make sure they go to a safe and caring home.</p>
 		      </div>
-		    </div>
-		    <div class="carousel-item" style="background-image: url(images/petLook.jpg)">
-			    <div class="carouselCont" style="color: white; position: absolute; top: 0; left: 0; padding-left: 4rem; padding-top: 2rem;">
-			      	<h1>Adoption</h1>
-			      	<p style="font-size: 1rem; width: 25%;">Add a pet to our web site to put them up for adoption. We will make sure they go to a safe and caring home.</p>
-			      </div>
-		    </div>
-		  
-		  </div>
-		  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
-		  		  
+	    </div>
+	  
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	  		  
+	</div>
+	
+	
+	
+		
+	<div class="dFlex text-center" style="margin-top: 3%;">
+		<h1>Discover the BEST pet for YOU</h1>
+	</div>
+	<div class="dFlex">
+		<div>
+		
+			<form action="SearchPet" method="get">
+				<label>
+					<input type="text" name="petid" id="petid" placeholder="Pet ID #">
+					<input type="submit" value="Submit">
+				</label>
+			</form>
+		
 		</div>
+	</div>
+	
+	<!--  
+	<div class="discoverContainer d-flex justify-content-center">
+		 <img src="images/doggo.jpg" class="projectLink">
+		 <img src="images/cat.jpg" class="projectLink">
+		 <img src="images/bird.jpg" class="projectLink">
+		 <img src="images/fish.jpg" class="projectLink">
+		 <img src="images/turtle.jpg" class="projectLink">
+		 
+	</div>
+	-->
+	
+	<div class="discoverContainer d-flex justify-content-center">
 		
-		
-		
-			
-		<div class="dFlex" style="margin-top: 3%;">
-			<h1>Discover the BEST pet for YOU</h1>
-		</div>
-		<div class="dFlex">
-			<div>
-			
-				<form action="SearchPet" method="get">
-					<label>
-						<input type="text" name="petid" id="petid" placeholder="Pet ID #">
-						<input type="submit" value="Submit">
-					</label>
-				</form>
-			
-			</div>
-		</div>
-		
-		<!--  
-		<div class="discoverContainer d-flex justify-content-center">
-			 <img src="images/doggo.jpg" class="projectLink">
-			 <img src="images/cat.jpg" class="projectLink">
-			 <img src="images/bird.jpg" class="projectLink">
-			 <img src="images/fish.jpg" class="projectLink">
-			 <img src="images/turtle.jpg" class="projectLink">
-			 
-		</div>
-		-->
-		
-		<div class="discoverContainer d-flex justify-content-center">
-			
-			<div class="single-content" style="background-image: url(images/doggo.jpg)">
-				<h1 class="title">Doggo</h1>
-				<div class="img-text">
-					<h2>Find a Dog</h2>
-				</div>
-			</div>
-			
-			<div class="single-content" style="background-image: url(images/cat.jpg)">
-				<h1 class="title">Cat</h1>
-				<div class="img-text">
-					<h2>Find a Cat</h2>
-				</div>
-			</div>
-			
-			<div class="single-content" style="background-image: url(images/bird.jpg)">
-				<h1 class="title">Bird</h1>
-				<div class="img-text">
-					<h2>Find a Bird</h2>
-				</div>
-			</div>
-			
-			<div class="single-content" style="background-image: url(images/fish.jpg)">
-				<h1 class="title">Fish</h1>
-				<div class="img-text">
-					<h2>Find a Fish</h2>
-				</div>
-			</div>
-			
-			<div class="single-content" style="background-image: url(images/turtle.jpg)">
-				<h1 class="title">Turtle</h1>
-				<div class="img-text">
-					<h2>Find a Turtle</h2>
-				</div>
+		<div class="single-content" style="background-image: url(images/doggo.jpg)">
+			<h1 class="title">Doggo</h1>
+			<div class="img-text">
+				<h2>Find a Dog</h2>
 			</div>
 		</div>
 		
-		<img src="images/bottomFrame.png" style="width: 100%; margin-top: 2%;">
+		<div class="single-content" style="background-image: url(images/cat.jpg)">
+			<h1 class="title">Cat</h1>
+			<div class="img-text">
+				<h2>Find a Cat</h2>
+			</div>
+		</div>
 		
+		<div class="single-content" style="background-image: url(images/bird.jpg)">
+			<h1 class="title">Bird</h1>
+			<div class="img-text">
+				<h2>Find a Bird</h2>
+			</div>
+		</div>
+		
+		<div class="single-content" style="background-image: url(images/fish.jpg)">
+			<h1 class="title">Fish</h1>
+			<div class="img-text">
+				<h2>Find a Fish</h2>
+			</div>
+		</div>
+		
+		<div class="single-content" style="background-image: url(images/turtle.jpg)">
+			<h1 class="title">Turtle</h1>
+			<div class="img-text">
+				<h2>Find a Turtle</h2>
+			</div>
+		</div>
+	</div>
+	
+	<img src="images/bottomFrame.png" style="width: 100%; margin-top: 2%;">
+
 		
 		
 		
@@ -155,20 +160,18 @@
   
   <div class="d-flex justify-content-center" style="margin-top: 2rem;">
   	<div style="margin-right: 3rem;">
-        <h5 class="text-uppercase">Links</h5>
 
         <ul class="list-unstyled mb-0">
           <li>
             Email
           </li>
           <li>
-            Phone #
+            Phone
           </li>
         </ul>
       </div>
       
       <div>
-        <h5 class="text-uppercase mb-0">Links</h5>
 
         <ul class="list-unstyled">
           <li>
