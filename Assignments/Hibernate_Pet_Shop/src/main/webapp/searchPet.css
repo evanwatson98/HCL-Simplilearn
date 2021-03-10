@@ -7,6 +7,8 @@
     /* padding: 2rem; */
     justify-content: space-between ;
     /* margin-right: 50rem; */
+    padding-left: 40px;
+    margin-top: 3rem;
 }
 
 .dFlex{
@@ -20,3 +22,85 @@
     width: 20rem;
     margin-top: 2%;
 }
+
+.carousel-item{
+	height:34rem;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	
+}
+
+
+.single-content .title{
+	margin: 0;
+	position: absolute;
+	font-size: 20px;
+	color: #fff;
+}
+
+.single-content{
+	margin-top: 2rem;
+	margin-right: 2rem;
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+	position: relative;
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+	width: 20rem;
+	height: 20rem;
+	
+}
+
+.single-content img{
+	width: 20rem;
+	height: auto;
+}
+
+.single-content .img-text {
+	width: 100%;
+	height: 100%;
+	background: rgba(39, 140, 44,.7);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: perspective(400px);
+	transform-origin: center top 0;
+	transition: .5s;
+	padding: 20% 0 0;
+	color: #fff;
+	text-align: center;	
+	
+}
+
+.single-content:hover .img-text{
+	opacity: 1;
+	transform: perspective(400px) rotateX(0);
+}
+
+.single-content .title{
+	bottom: 25px;
+	left: 25px;
+	transition: .5s;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+	
+.single-content .title:before{
+	content: '';
+	border-right: 3px solid #fff;
+	margin-right: 10px;
+
+}
+
+.single-content:hover .title{
+	bottom: -40px;
+
+}
+
+
+
+
+
+

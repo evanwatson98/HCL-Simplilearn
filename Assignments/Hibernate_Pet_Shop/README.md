@@ -1,7 +1,7 @@
 # Pet Shop Hibernate
 
 ### Start Application
-Run the Java application on an apache tomcat. You can do this by running a maven build
+Run the Java application on an apache tomcat server. You can do this by running a maven build
 or with your personal tomcat server. 
 
 ### Walkthrough
