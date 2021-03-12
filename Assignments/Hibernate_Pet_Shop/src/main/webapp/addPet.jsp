@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Pet</title>
   <link rel="shortcut icon" type="image/svg+xml" href="images/pets-24px.svg" />
 
 <!-- Bootstrap -->

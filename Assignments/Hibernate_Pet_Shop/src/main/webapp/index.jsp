@@ -46,7 +46,7 @@
   </div>
 </nav>
 
-	<img src="images/account_circle-24px.svg" style="width: 3rem; height: auto; position: absolute; top:2px; right: 5rem;">    
+	<img onclick="location.href='Login.jsp';" src="images/account_circle-24px.svg" class="accountBtn" style="width: 3rem; height: auto; position: absolute; top:2px; right: 5rem;">    
 	      	
 	      	    
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">		

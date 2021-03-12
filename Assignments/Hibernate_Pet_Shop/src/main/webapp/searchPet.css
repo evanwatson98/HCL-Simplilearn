@@ -99,6 +99,15 @@
 
 }
 
+.accountBtn:hovver{
+	cursor: pointer;
+}
+
+.accountBtn:active {
+    vertical-align: top;
+    padding: 8px 13px 6px;
+}
+
 
 
 
