@@ -46,7 +46,18 @@
   </div>
 </nav>
 
-	<img onclick="location.href='Login.jsp';" src="images/account_circle-24px.svg" class="accountBtn" style="width: 3rem; height: auto; position: absolute; top:2px; right: 5rem;">    
+
+
+
+	<div class="d-flex" style="position: absolute; top:2px; right: 5rem;">
+		<div class="" style="margin-right: 10px; margin-top: 10px;"> ${user}</div>
+		<img onclick="location.href='Login.jsp';" src="images/account_circle-24px.svg" class="accountBtn" style="width: 3rem; height: auto;">    
+	</div>
+	      	
+	      	
+	      	
+	      	
+	      	
 	      	
 	      	    
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">		

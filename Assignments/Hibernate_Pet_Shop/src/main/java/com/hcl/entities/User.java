@@ -14,51 +14,49 @@ import javax.persistence.Table;
 public class User {
 	//@ = Metadata for hibernate
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	@SequenceGenerator(name = "user_seq", sequenceName= "USER_ID_SEQ")
-	@Column(name="id", nullable=false)
-	private Long id;
+	@Column(name="email", nullable=false)
+	private String email;
 	
-	@Column(name="name", nullable=false)
-	private String name; 
+	@Column(name="fname", nullable=false)
+	private String fname; 
 	
-	@Column(name="color", nullable=false)
-	private String color;
+	@Column(name="lname", nullable=false)
+	private String lname;
 	
-	@Column(name="price", nullable=false)
-	private Double price;
+	@Column(name="password", nullable=false)
+	private String password;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
-//	@Column(name="birthDate", updatable=false)
-//	private Date birthDate;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-//	public Date getBirthDate() {
-//		return birthDate;
-//	}
-//	public void setBirthDate(Date birthDate) {
-//		this.birthDate = birthDate;
-//	}
 }

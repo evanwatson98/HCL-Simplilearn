@@ -1,14 +1,14 @@
 package com.hcl.petShop;
 
 import org.hibernate.cfg.Configuration;
-
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import com.hcl.entities.Pet;
+import com.hcl.entities.User;
 
 public class HibernateUtil {
 
@@ -31,6 +31,7 @@ public class HibernateUtil {
     public static SessionFactory getSessionFactory() {
             return sessionFactory;
     }
+
 
 	
 }

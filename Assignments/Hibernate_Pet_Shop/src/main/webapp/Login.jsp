@@ -24,8 +24,9 @@
 </nav>
 
 <div class="text-center">A Pet Friendly Web Site</div>
+<h1 class="text-center" style="color: red;">${user}</h1>
 <div style="color: white; width: 100%; height: 100%; display: flex; justify-content: center; margin-bottom: 5rem; margin-top: 5rem;">
-		<div style="width: 500px; height: 500px; background-color: #1aad33; border-radius: 30px; position: relative;">
+		<div style="width: 500px; height: 650px; background-color: #1aad33; border-radius: 30px; position: relative;">
 					<div class="text-center" style="border: solid 10px white; border-radius: 50%; background-color: pink; width: 150px; height: 150px; position: absolute; left: 175px; top: -75px; color: white;">
 						<p style="margin-top: 10px; font-size: 35px; font-family: cursive"> Pet Shop</p>
 					</div>
@@ -36,8 +37,10 @@
 				<div class="account signUp" style=" font-size: 25px; margin-right: 70px;" onclick="signUp()">Sign Up</div>
 			
 			</div>
-		
-			<form name="addPet" action="addPet" onsubmit="return validateForm()" method="post" style="margin-top: 40px;">
+				<!-- ------------------------------------------------------------- -->
+				<!--                  Sign in                                     -->
+				<!-- ------------------------------------------------------------- -->
+			<form name="Signin" class = "signinBox" onsubmit="return validateLogin()" action="Signin" method="get" style="margin-top: 40px;">
 				<label class="d-flex justify-content-center" style="width: 100%;">
 				
 					<div>
@@ -54,9 +57,45 @@
 						</div>					
 						<br>
 						<br>
-						<div class="d-flex justify-content-end" style="width: 100%;">
 							<input type="submit" value="Submit" class="btn btn-primary btn-lg" style="background-color: pink; border-color: pink;">
+					</div>		
+					
+				</label>
+				</form>
+				
+				<!-- ------------------------------------------------------------- -->
+				<!--                  Sign up                                      -->
+				<!-- ------------------------------------------------------------- -->
+				<form class = "signupBox" name="Signup" onsubmit="return validateSignUp()" action="Signup" method="post" style="visibility: hidden;">
+				<label class="d-flex justify-content-center" style="width: 100%;">
+				
+					<div>
+						<label for="newEmail">Email</label>
+						<div class="" style="width: 100%;">
+							<input type="email" id="newEmail" name="newEmail">
 						</div>
+						<br>
+						
+						<label for="fname">First Name</label>
+						
+						<div class="" style="width: 100%;">
+							<input type="input" id="fname" name="fname">
+						</div>
+						
+						<label for="lname">Last Name</label>
+						
+						<div class="" style="width: 100%;">
+							<input type="input" id="lname" name="lname">
+						</div>
+						
+						<label for="newPwd">Password</label>
+						
+						<div class="" style="width: 100%;">
+							<input type="password" id="newPassword" name="newPassword">
+						</div>					
+						<br>
+						<br>
+							<input type="submit" value="Submit" class="btn btn-primary btn-lg" style="background-color: pink; border-color: pink;">
 					</div>		
 					
 				</label>

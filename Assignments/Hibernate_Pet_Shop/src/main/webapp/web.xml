@@ -11,11 +11,26 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <description></description>
     <display-name>FindPetServlet</display-name>
     <servlet-name>FindPetServlet</servlet-name>
     <servlet-class>com.hcl.petShop.FindPetServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>SignupServlet</display-name>
+    <servlet-name>SignupServlet</servlet-name>
+    <servlet-class>com.hcl.petShop.SignupServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>SigninServlet</display-name>
+    <servlet-name>SigninServlet</servlet-name>
+    <servlet-class>com.hcl.petShop.SigninServlet</servlet-class>
   </servlet>
   
   <servlet>
@@ -33,6 +48,16 @@
   <servlet-mapping>
     <servlet-name>AddPetServlet</servlet-name>
     <url-pattern>/addPet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>SignupServlet</servlet-name>
+    <url-pattern>/Signup</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>SigninServlet</servlet-name>
+    <url-pattern>/Signin</url-pattern>
   </servlet-mapping>
 
 </web-app>	

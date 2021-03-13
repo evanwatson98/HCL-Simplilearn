@@ -34,12 +34,13 @@ INSERT INTO pets.products (name,color,price) VALUES ("Cayman", "Neon Pink", 500.
 INSERT INTO pets.products (name,color,price) VALUES ("Tarantula", "Red", 100.00);
 ```
 
-User Table
+### User Table
 ```sql
 CREATE TABLE users(
 	email VARCHAR(256) NOT NULL,
 	fname VARCHAR(256),
 	lname VARCHAR(256),
+	password VARCHAR(1000),
 	PRIMARY KEY (email)
-)
+);
 ```

@@ -10,5 +10,6 @@
     <property name="connection.username">springuser</property>
     <property name="connection.password">ThePassword</property>
     <mapping  class="com.hcl.entities.Pet"/>
+    <mapping  class="com.hcl.entities.User"/>
   </session-factory>
 </hibernate-configuration>
