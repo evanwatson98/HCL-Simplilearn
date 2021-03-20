@@ -22,7 +22,7 @@ public class FeedbackService {
 	    	return user;
 	    }
 
-		public Iterable<Feedback> GetAllFeedbacks() {
+		public Iterable<Feedback> getAllFeedbacks() {
 			// TODO Auto-generated method stub
 			return feedbackRepository.findAll();
 		}

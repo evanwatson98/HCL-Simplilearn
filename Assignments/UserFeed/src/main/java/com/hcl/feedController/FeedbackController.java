@@ -1,8 +1,11 @@
 package com.hcl.feedController;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,14 +18,12 @@ public class FeedbackController {
 	@Autowired
 	FeedbackService feedbackService;
 	
-//	static Logger log = (Logger) LoggerFactory.getLogger(FeedbackController.class);
-	
-//	private static Logger logger = LogManager.getLogger(FeedbackController.class);
-	
-	@GetMapping(value = "/feedback", produces = "application/json")
+    Logger logger = LoggerFactory.getLogger(FeedbackController.class);
+
+	@GetMapping("/feedback")
 	public @ResponseBody Iterable<Feedback> getAllFeedbacks() {
         // This returns a JSON or XML with the Feedbacks
-        return feedbackService.GetAllFeedbacks();
+        return feedbackService.getAllFeedbacks();
     }
 	
 	//MediaType.APPLICATION_PROBLEM_JSON_VALUE
@@ -36,6 +37,9 @@ public class FeedbackController {
 		newFeedback.setRating(rating);
 		newFeedback.setUser(username);
 		
+		logger.info("addNewFeedback ==================================================================================" + newFeedback.toString());
 		return feedbackService.save(newFeedback);  // Change this.
 	}
 }
+
+

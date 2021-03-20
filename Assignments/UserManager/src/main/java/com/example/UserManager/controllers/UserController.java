@@ -51,10 +51,10 @@ public class UserController {
 		user.setName(name);
 		user.setPassword(password);
 		userService.save(user);
-		logger.info("Passing users to view");
-//	    model.addAttribute("users", users);
+		logger.info("Passing user to confirm view");
+	    model.addAttribute("user", user);
 	    
-		return "index";
+		return "confirm";
 	}
 	
 	@PostMapping("/users")
@@ -63,7 +63,7 @@ public class UserController {
 		Iterable<User> users = Arrays.asList(user);
 		
 		
-		logger.info("Passing users to view");
+		logger.info("Passing users to update view");
 	    model.addAttribute("user", user);
 	    
 		return "updateUser";

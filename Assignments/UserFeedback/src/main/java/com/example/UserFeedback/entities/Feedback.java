@@ -1,4 +1,4 @@
-package com.hcl.enitites;
+package com.example.UserFeedback.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Entity
-//@Table("feedback")
+@Data
 public class Feedback {
 
 	@Id
@@ -41,8 +41,7 @@ public class Feedback {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	@Override
-	public String toString() {
-		return "Feedback [id=" + id + ", comments=" + comments + ", rating=" + rating + ", user=" + user + "]";
-	}
+	
+	
+	
 }

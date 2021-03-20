@@ -1,11 +1,9 @@
-package com.hcl.repositories;
+package com.example.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-import com.hcl.enitites.Feedback;
+import com.example.entities.Feedback;
 
-@Repository
 public interface FeedbackRepository extends CrudRepository<Feedback, Integer>{
 
 }

@@ -4,6 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+<!-- Google Credintials -->
+<meta name="google-signin-client_id" content="770775396538-q3m50r8vvupf6a70qtin44qu6o72bknm.apps.googleusercontent.com">
+
 <title>Login</title>
   <link rel="shortcut icon" type="image/svg+xml" href="images/pets-24px.svg" />
 
@@ -100,6 +104,8 @@
 					
 				</label>
 			</form>
+			
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		</div>
 		
 		</div>
@@ -148,6 +154,10 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+	
+	
+	<!-- Google Credintials -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	
 	<!-- Bootstrap -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

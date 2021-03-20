@@ -9,9 +9,9 @@
 <body>
 
 <h1>Create a feedback</h1>
-<form name = "feedback" action="feedback" method="post">
+<form action="/feedback" method="post">
 		<label>
-			<input type="text" name="username" id="username" placeholder="User">
+			<input type="text" name="user" id="user" placeholder="User">
 			<input type="text" name="rating" id="rating" placeholder="Rating">
 			<input type="text" name="comment" id="comment" placeholder="Comments">
 			
