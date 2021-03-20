@@ -27,7 +27,7 @@ public class FeedbackController {
     }
 	
 	//MediaType.APPLICATION_PROBLEM_JSON_VALUE
-	@PostMapping(value="/feedback", consumes = {"application/json", "application/x-www-form-urlencoded"})
+	@PostMapping(value="/feedback", consumes = {"application/x-www-form-urlencoded"})
 	public Feedback addNewFeedback(@RequestParam(value="username", required=false, defaultValue="") String username, @RequestParam(value="rating", required=false, defaultValue="") int rating, @RequestParam(value="comment", required=false, defaultValue="") String comment) {
 		// TODO: Do something useful here.  
 		// Add the Feedback.
@@ -43,6 +43,15 @@ public class FeedbackController {
 		}
 		
 		return newFeedback;  // Change this.
+	}
+	
+	@PostMapping(value="/feedback", consumes = {"application/json"})
+	public Feedback addNewFeedback(@RequestBody Feedback newFeedback) {
+		// TODO: Do something useful here.  
+		// Add the Feedback.
+
+		
+		return feedbackService.save(newFeedback);  // Change this.
 	}
 }
 
