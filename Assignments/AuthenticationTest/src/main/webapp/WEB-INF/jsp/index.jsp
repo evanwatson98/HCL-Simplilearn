@@ -5,9 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 
-<!-- Google Credintials -->
-<meta name="google-signin-client_id" content="770775396538-q3m50r8vvupf6a70qtin44qu6o72bknm.apps.googleusercontent.com">
-
 <title>Login</title>
   <link rel="shortcut icon" type="image/svg+xml" href="images/pets-24px.svg" />
 
@@ -28,7 +25,6 @@
 </nav>
 
 <div class="text-center">A Pet Friendly Web Site</div>
-<h1 class="text-center" style="color: red;">${error}</h1>
 <div style="color: white; width: 100%; height: 100%; display: flex; justify-content: center; margin-bottom: 5rem; margin-top: 5rem;">
 		<div style="width: 500px; height: 650px; background-color: #1aad33; border-radius: 30px; position: relative;">
 					<div class="text-center" style="border: solid 10px white; border-radius: 50%; background-color: pink; width: 150px; height: 150px; position: absolute; left: 175px; top: -75px; color: white;">
@@ -41,6 +37,11 @@
 				<div class="account signUp" style=" font-size: 25px; margin-right: 70px;" onclick="signUp()">Sign Up</div>
 			
 			</div>
+			
+			
+			<div class="d-flex justify-content-between" style="width: 500px;">
+			<div style="color: red; font-weight: bold;">${error}</div>
+			</div>
 				<!-- ------------------------------------------------------------- -->
 				<!--                  Sign in                                     -->
 				<!-- ------------------------------------------------------------- -->
@@ -48,7 +49,7 @@
 				<label class="d-flex justify-content-center" style="width: 100%;">
 				
 					<div>
-						<label for="email">Email</label>
+						<label for="email">E-mail</label>
 						<div class="" style="width: 100%;">
 							<input type="email" id="email" name="email">
 						</div>
@@ -70,13 +71,13 @@
 				<!-- ------------------------------------------------------------- -->
 				<!--                  Sign up                                      -->
 				<!-- ------------------------------------------------------------- -->
-				<form class = "signupBox" name="Signup" onsubmit="return validateSignUp()" action="Signup" method="post" style="visibility: hidden;">
+				<form class = "signupBox" name="/Signup" onsubmit="return validateSignUp()" action="Signup" method="post" style="visibility: hidden;">
 				<label class="d-flex justify-content-center" style="width: 100%;">
 				
 					<div>
 						<label for="newEmail">Email</label>
 						<div class="" style="width: 100%;">
-							<input type="email" id="newEmail" name="newEmail">
+							<input type="input" id="newEmail" name="newEmail">
 						</div>
 						<br>
 						
@@ -95,7 +96,7 @@
 						<label for="newPwd">Password</label>
 						
 						<div class="" style="width: 100%;">
-							<input type="password" id="newPassword" name="newPassword">
+							<input type="input" id="newPassword" name="newPassword">
 						</div>					
 						<br>
 						<br>
@@ -105,7 +106,6 @@
 				</label>
 			</form>
 			
-			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		</div>
 		
 		</div>
@@ -168,3 +168,4 @@
 
 </body>
 </html>
+
