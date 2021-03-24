@@ -36,4 +36,28 @@ public class RepositoryTest {
 		User user = repository.findByEmail("test@gmail.com");
 		assertEquals(user.getEmail(), "test@gmail.com");
 	}
+	
+	@Test
+	void testEntity_getEmail(){
+		User user = repository.findByEmail("test@gmail.com");
+		assertEquals(user.getEmail(), "test@gmail.com");
+	}
+	
+	@Test
+	void testEntity_getPassword() {
+		User user = repository.findByEmail("test@gmail.com");
+		assertEquals(user.getPassword(), "test");
+	}
+
+	@Test
+	void testEntity_getId() {
+		User user = repository.findByEmail("test@gmail.com");
+		assertEquals(user.getId(), 5);
+	}
+	
+	@Test
+	void testEntity_getName(){
+		User user = repository.findByEmail("test@gmail.com");
+		assertEquals(user.getName(), "Evan");
+	}
 }
