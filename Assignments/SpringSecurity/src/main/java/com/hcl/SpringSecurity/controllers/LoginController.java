@@ -43,7 +43,7 @@ public class LoginController {
 	public ModelAndView registration() {
 		ModelAndView modelAndView = new ModelAndView();
 		UserCred user = new UserCred();
-		modelAndView.addObject("user", user);
+		modelAndView.addObject("userCred", user);
 		modelAndView.setViewName("registration");
 		return modelAndView;
 	}
@@ -55,7 +55,7 @@ public class LoginController {
 		System.out.println("============================================ Users " + user.toString());
 
 		UserCred userExists = userService.findUserByUserName(user.getUserName());
-		System.out.println("============================================ userExists" + userExists.toString());
+//		System.out.println("============================================ userExists" + userExists.toString());
 
 		if(userExists != null) {
 			bindingResult.rejectValue("userName", "There is already a user w/ that name. Sorry...try again");
