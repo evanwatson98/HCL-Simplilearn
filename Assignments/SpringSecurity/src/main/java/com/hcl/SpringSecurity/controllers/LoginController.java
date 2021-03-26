@@ -55,7 +55,6 @@ public class LoginController {
 		System.out.println("============================================ Users " + user.toString());
 
 		UserCred userExists = userService.findUserByUserName(user.getUserName());
-//		System.out.println("============================================ userExists" + userExists.toString());
 
 		if(userExists != null) {
 			bindingResult.rejectValue("userName", "There is already a user w/ that name. Sorry...try again");
