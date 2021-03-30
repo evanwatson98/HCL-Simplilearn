@@ -85,11 +85,12 @@ public class LoginController {
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		UserCred user = userService.findUserByUserName(auth.getName());
+		System.out.println("=================================== User for Tasks" + user.toString());
 		
-//		Iterable<Task> tasks = taskService.GetTasksByUser(user); 
-//		
-//		System.out.println("===================================" + tasks.toString());
-//		modelAndView.addObject("userTasks", tasks);
+		Iterable<Task> tasks = taskService.GetTasksByUser(user); 
+		
+		System.out.println("=================================== Tasks" + tasks.toString());
+		modelAndView.addObject("userTasks", tasks);
 		
 		modelAndView.addObject("userName", user.getName());
 		modelAndView.addObject("adminMessage", "Content Available only for users with admin role");
@@ -98,7 +99,7 @@ public class LoginController {
 		return modelAndView;
 	}
 	
-	@PostMapping(value="/admin/home/addTask")
+	@PostMapping(value="/admin/home")
 	public ModelAndView addTask(Principal principle, @RequestParam(value="fname", required=false, defaultValue="") String fname, 
 								@RequestParam(value="lname", required=false, defaultValue="") String lname, 
 								@RequestParam(value="sdate")     @DateTimeFormat(pattern="yyyy-MM-dd") Date sdate, 
@@ -112,6 +113,15 @@ public class LoginController {
 		UserCred user = userService.findUserByUserName(principle.getName());
 		Task task = new Task(fname + lname, sdate, edate, sev, desc, user);
 		taskService.save(task);
+		
+		Iterable<Task> tasks = taskService.GetTasksByUser(user); 
+		
+		System.out.println("=================================== Tasks" + tasks.toString());
+		modelAndView.addObject("userTasks", tasks);
+		
+		modelAndView.addObject("userName", user.getName());
+		modelAndView.addObject("adminMessage", "Content Available only for users with admin role");
+		
 		modelAndView.setViewName("admin/home");
 		return modelAndView;
 	}

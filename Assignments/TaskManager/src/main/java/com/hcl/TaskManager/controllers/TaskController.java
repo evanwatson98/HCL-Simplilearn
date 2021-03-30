@@ -25,7 +25,6 @@ public class TaskController {
 		Optional<Task> task = taskService.GetTaskById(taskId);
 		
         model.addAttribute("task", task.get());
-		
 		  
 		return "taskform";
 	}

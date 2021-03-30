@@ -12,7 +12,6 @@ import java.util.Date;
 
 @Entity
 public class Task {
-
 	
 	@Id
 	   @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,7 +27,9 @@ public class Task {
 	   @ManyToOne
 	   private UserCred user;
 	   
-	   
+	   public Task() {
+		   
+	   }
 	public Task(String name, Date startDate, Date endDate, String severity, String description,
 			UserCred user) {
 		super();
