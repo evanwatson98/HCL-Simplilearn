@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 
 import java.security.Principal;
 import java.util.Date;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -111,7 +112,7 @@ public class LoginController {
 		ModelAndView modelAndView = new ModelAndView();
 
 		UserCred user = userService.findUserByUserName(principle.getName());
-		Task task = new Task(fname + lname, sdate, edate, sev, desc, user);
+		Task task = new Task(fname + " " + lname, sdate, edate, sev, desc, user);
 		taskService.save(task);
 		
 		Iterable<Task> tasks = taskService.GetTasksByUser(user); 
@@ -122,7 +123,32 @@ public class LoginController {
 		modelAndView.addObject("userName", user.getName());
 		modelAndView.addObject("adminMessage", "Content Available only for users with admin role");
 		
-		modelAndView.setViewName("admin/home");
+		modelAndView.setViewName("redirect:/admin/home");
+		return modelAndView;
+	}
+	
+	@PostMapping(value = "/admin/home/updateTask")
+	public ModelAndView updateTask(Principal principle, @RequestParam(value="tId", required=true, defaultValue="") String id,
+			@RequestParam(value="tName", required=false, defaultValue="") String name, 
+			@RequestParam(value="tSdate")     @DateTimeFormat(pattern="yyyy-MM-dd") Date sdate, 
+			@RequestParam(value="tEdate")     @DateTimeFormat(pattern="yyyy-MM-dd") Date edate,
+			@RequestParam(value="tDesc") String desc,
+			@RequestParam(value="tSev") String sev
+			
+			) {
+		ModelAndView modelAndView = new ModelAndView();
+
+//		UserCred user = userService.findUserByUserName(principle.getName());
+		Optional<Task> updateTaskOption = taskService.GetTaskById(Integer.parseInt(id));
+		Task updateTask = updateTaskOption.get();
+		updateTask.setName(name);
+		updateTask.setStartDate(sdate);
+		updateTask.setEndDate(edate);
+		updateTask.setDescription(desc);
+		updateTask.setSeverity(sev);
+		taskService.save(updateTask);
+		
+		modelAndView.setViewName("redirect:/admin/home");
 		return modelAndView;
 	}
 	

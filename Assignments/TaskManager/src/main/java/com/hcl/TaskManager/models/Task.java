@@ -30,6 +30,7 @@ public class Task {
 	   public Task() {
 		   
 	   }
+	   
 	public Task(String name, Date startDate, Date endDate, String severity, String description,
 			UserCred user) {
 		super();

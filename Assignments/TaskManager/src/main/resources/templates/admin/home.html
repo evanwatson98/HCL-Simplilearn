@@ -49,16 +49,35 @@
 		    cursor: pointer;
 		}
 		
+		.taskTable{
+		  -moz-user-select: none;
+		  -webkit-user-select: none;
+		  -ms-user-select: none;
+		  -o-user-select: none;
+		  user-select: none;    
+  		}
 		.trashIcon:hover{
     cursor: pointer;
 }
+
+	.taskTable:hover{
+		cursor: text;
+	}
+	
+	.confirmUpdate{
+		visibility: hidden;
+	}
+	
+	.rId{
+		visibility: hidden;
+	}
 	</style>
 
 <title>Admin</title>
 </head>
 <body>
 <div class="container">
-	<div class="d-flex justify-content-center">
+	<div class="d-flex justify-content-end">
 		<form th:action="@{/logout}" method="get">
 			<button class="btn btn-md btn-danger btn-block d-flex justify-content-center" style="width: 100px; height: auto;" name="registration" type="Submit">Logout</button>
 		</form>
@@ -106,11 +125,14 @@
       
       
 <div style="position: relative;">
+     <form action="/admin/home/updateTask" class="taskForm" method="post">
+
 	 <table class="table table-hover taskTable" style="position: absolute;">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col"></th>
               <th scope="col">First</th>
+              <th scope="col">Email</th>
               <th scope="col">Description</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
@@ -119,78 +141,33 @@
             </tr>
           </thead>
           <tbody th:each="task: ${userTasks}">
-	        <tr>
-		   		<td th:text="${task.id}" />
-		    	<td th:text="${task.name}" />
-		    	<td th:text="${task.description}" />
+	        <tr class="taskRow">
+		   		<td class= "rId" th:text="${task.id}" ></td>
+		    	<td class= "rName" th:text="${task.name}"></td>
+		    	<td class= "rEmail" th:text="${task.user.email}"></td>
+		    	<td class= "rDesc" th:text="${task.description}"></td>
 		    	
-		    	<td th:text="${task.startDate}" />
-		    	<td th:text="${task.endDate}" />
-		    	<td th:text="${task.severity}" />
-		    	<td class="trashIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+		    	<td class= "rSdate" th:text="${task.startDate}"></td>
+		    	<td class= "rEdate" th:text="${task.endDate}"></td>
+		    	<td class= "rSev" th:text="${task.severity}"></td>
+		    	<td class="trashIcon rDel"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
 	                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
 	                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
               </svg>
               </td>
-               
+              
+              <td class="confirmUpdate"><input type="submit" value="Submit" class="btn btn-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check" viewBox="0 0 16 16">
+				  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path>
+				</svg>
+                Update
+              </td>
 			</tr>
+			
           </tbody>
     </table>
+    </form>
     </div>
-    
-    
-    
-    
-    
-	<!--  
-      <div style="position: relative;">
-        <table class="table table-hover taskTable" style="position: absolute;">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td class="trashIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-              </svg>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td class="trashIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-              </svg>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-              <td class="trashIcon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-              </svg>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-      </div>
-      -->
 </div>
 
 </div>
@@ -242,6 +219,114 @@ async function closeAddTask(){
   }
   addDrop.style.width = 0;
 }
+
+var taskRows = document.querySelectorAll('.taskRow');
+
+var i;
+for (i = 0; i < taskRows.length; i++) {
+	taskRows[i].addEventListener('dblclick', editRow);
+	}
+	
+function editRow(){
+	console.log("edit row", this);
+	var confirmUpdates = this.querySelector('.confirmUpdate');
+	confirmUpdates.style.visibility = 'visible';
+	
+	
+	
+	var rId = this.querySelector('.rId');
+	var rName = this.querySelector('.rName');
+   var rEmail = this.querySelector('.rEmail');
+   var rDesc = this.querySelector('.rDesc');
+   var rSdate = this.querySelector('.rSdate');
+   var rEdate = this.querySelector('.rEdate');
+   var rSev = this.querySelector('.rSev');
+	
+//////////////////////////////////////////////////////////
+	//document.getElementById("myText").defaultValue = "Goofy";
+	///////////////////////////////////////////////////////////
+	
+	var id = document.createElement("input");
+	id.setAttribute("type", "hidden");
+	id.setAttribute("name", "tId");
+	id.defaultValue = rId.innerHTML;
+	// Create an input element for Full Name
+	var name = document.createElement("input");
+	name.setAttribute("type", "text");
+	name.setAttribute("name", "tName");
+	name.defaultValue = rName.innerHTML;
+	rName.innerHTML = "";
+	// Create an input element for Full Name
+	var email = document.createElement("input");
+	email.setAttribute("type", "text");
+	email.setAttribute("name", "tEmail");
+	email.defaultValue = rEmail.innerHTML;
+	rEmail.innerHTML = "";
+	 // Create an input element for date of birth
+	 var desc = document.createElement("textarea");
+	 desc.setAttribute("name", "tDesc");
+	 desc.defaultValue = rDesc.innerHTML;
+	 rDesc.innerHTML = "";
+	 // Create an input element for emailID
+	 var sev = document.createElement("select");
+	 sev.setAttribute("name", "tSev");
+	 sev.defaultValue = rSev.innerHTML;
+	 var option = document.createElement("option");
+	    option.value = "high";
+	    option.text = "High";
+	    sev.appendChild(option);
+	    option = document.createElement("option");
+	    option.value = "medium";
+	    option.text = "Medium";
+	    sev.appendChild(option);
+	    option = document.createElement("option");
+	    option.value = "low";
+	    option.text = "Low";
+	    sev.appendChild(option);
+	    
+	    
+	    
+	 rSev.innerHTML = "";
+	  // Create an input element for password
+	  var sdate = document.createElement("input");
+	  sdate.setAttribute("type", "date");
+	  sdate.setAttribute("name", "tSdate");
+	  //sdate.defaultValue = rSdate.innerHTML;
+	  rSdate.innerHTML = "";
+	  // Create an input element for password
+	  var edate = document.createElement("input");
+	  edate.setAttribute("type", "date");
+	  edate.setAttribute("name", "tEdate");
+	  //edate.defaultValue = rEdate.innerHTML;
+	  rEdate.innerHTML = "";
+	   // create a submit button
+	   var s = document.createElement("input");
+	   s.setAttribute("type", "submit");
+	   s.setAttribute("value", "Submit");
+	   
+	   
+	   rId.appendChild(id);
+	   
+	  //d the full name input to the form
+	  rName.appendChild(name); 
+	
+	  // Append the DOB to the form
+	  rEmail.appendChild(email); 
+	    
+	  // Append the emailID to the form
+	  rDesc.appendChild(desc); 
+	    
+	  // Append the Password to the form
+	  rSdate.appendChild(sdate); 
+	    
+	  // Append the ReEnterPassword to the form
+	  rEdate.appendChild(edate); 
+	    
+	  // Append the submit button to the form
+	  rSev.appendChild(sev); 
+	
+}
+
 </script>
 </body>
 </html>
