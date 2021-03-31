@@ -151,5 +151,18 @@ public class LoginController {
 		modelAndView.setViewName("redirect:/admin/home");
 		return modelAndView;
 	}
-	
+
+	@PostMapping(value = "/admin/home/deleteTask")
+	public ModelAndView deleteTask(Principal principle, @RequestParam(value="tId", required=true, defaultValue="") String id
+			) {
+		ModelAndView modelAndView = new ModelAndView();
+
+//		UserCred user = userService.findUserByUserName(principle.getName());
+		Optional<Task> deleteTaskOption = taskService.GetTaskById(Integer.parseInt(id));
+		Task deleteTask = deleteTaskOption.get();
+		taskService.delete(deleteTask);
+		
+		modelAndView.setViewName("redirect:/admin/home");
+		return modelAndView;
+	}
 }

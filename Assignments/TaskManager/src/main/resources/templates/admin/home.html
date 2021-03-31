@@ -327,6 +327,32 @@ function editRow(){
 	
 }
 
+var deleteIcon = document.querySelectorAll('.rDel')
+for (i = 0; i < deleteIcon.length; i++) {
+	deleteIcon[i].addEventListener('click', deleteTask);
+}
+function deleteTask(){
+	console.log('trash test', this.parentElement);
+	 // Create a form synamically
+    var form = document.createElement("form");
+	 form.style.visibility = 'hidden';
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "/admin/home/deleteTask");
+    
+    var rId = this.parentElement.querySelector('.rId');
+    var id = document.createElement("input");
+	id.setAttribute("type", "hidden");
+	id.setAttribute("name", "tId");
+	id.defaultValue = rId.innerHTML;
+	
+	form.appendChild(id);
+	
+	document.getElementsByTagName("body")[0]
+    .appendChild(form);
+	
+    form.submit();
+}
+
 </script>
 </body>
 </html>

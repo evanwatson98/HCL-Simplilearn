@@ -39,4 +39,9 @@ public class TaskService {
 		return task;
 	}
 	
+	public Task delete(Task task) {
+		// TODO Auto-generated method stub
+		taskRepository.delete(task);
+		return task;
+	}
 }
