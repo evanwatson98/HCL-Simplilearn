@@ -134,7 +134,6 @@ public class LoginController {
 			@RequestParam(value="tEdate")     @DateTimeFormat(pattern="yyyy-MM-dd") Date edate,
 			@RequestParam(value="tDesc") String desc,
 			@RequestParam(value="tSev") String sev
-			
 			) {
 		ModelAndView modelAndView = new ModelAndView();
 
