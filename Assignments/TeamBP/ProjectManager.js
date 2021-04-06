@@ -24,8 +24,16 @@ while(i < vendor_details.length){
     var tr = document.createElement("tr");
 
     var td_id = document.createElement("td");
+    td_id.id = "vendor" + vendor_details[i].vendor_id;
+    td_id.className = "vendorId";
+
     var td_name = document.createElement("td");
+    td_name.id = "vendor" + vendor_details[i].vendor_id;
+    td_name.className = "vendorCompany";
+
     var td_contact = document.createElement("td");
+    td_contact.id = "vendor" + vendor_details[i].vendor_id;
+    td_contact.className = "vendorEmail";
 
     td_id.textContent  = vendor_details[i].vendor_id;
     td_name.textContent  = vendor_details[i].vendor_name;
@@ -41,7 +49,29 @@ while(i < vendor_details.length){
 i = 0;
 
 function validateVendorAdd(){
-    console.log("delete");
+    console.log("Add");
+
+    var uVendorId= document.querySelector('.aVendorId');
+    var uVendorCompany= document.querySelector('.aVendorCompany');
+    var uVendorEmail= document.querySelector('.aVendorEmail');
+
+    console.log("Vendor Info", uVendorId.value, uVendorCompany.value, uVendorEmail.value);
+    alert("Update Vendor Information");
+
+    var tr = document.createElement("tr");
+
+    var td_id = document.createElement("td");
+    var td_name = document.createElement("td");
+    var td_contact = document.createElement("td");
+
+    td_id.textContent  = uVendorId.value;
+    td_name.textContent  = uVendorCompany.value;
+    td_contact.textContent  = uVendorEmail.value;
+
+    tr.appendChild(td_id);
+    tr.appendChild(td_name);
+    tr.appendChild(td_contact);
+    vendorTable.appendChild(tr);
 }
 
 function validateVendorUpdate(){
@@ -50,10 +80,36 @@ function validateVendorUpdate(){
     var uVendorCompany= document.querySelector('.uVendorCompany');
     var uVendorEmail= document.querySelector('.uVendorEmail');
 
-    console.log("Vendor Info" + uVendorId.value,uVendorCompany.value, uVendorEmail.value);
-    alert("Update Vendor Information");
+    var uId = parseInt(uVendorId.value);
+    while(i < vendor_details.length){
+        
+        if(uId == vendor_details[i].vendor_id){
+            var findId = document.querySelector('#vendor'+vendor_details[i].vendor_id);
+            var row = findId.parentElement;
+            console.log(row);
+
+            row.querySelector('.vendorEmail').textContent = uVendorEmail.value
+            row.querySelector('.vendorCompany').textContent = uVendorCompany.value
+
+        }
+
+        i++;
+    }
+    i=0;
 }
 
 function validateVendorDelete(){
     console.log("delete");
+    var dVendorId= document.querySelector('.dVendorId');
+    var uId = parseInt(dVendorId.value);
+    i=0;
+    while(i < vendor_details.length){
+        if(uId == vendor_details[i].vendor_id){
+            var findId = document.querySelector('#vendor'+vendor_details[i].vendor_id);
+            var row = findId.parentElement;
+
+            vendorTable.removeChild(row);
+        }
+        i++;
+    }
 }
